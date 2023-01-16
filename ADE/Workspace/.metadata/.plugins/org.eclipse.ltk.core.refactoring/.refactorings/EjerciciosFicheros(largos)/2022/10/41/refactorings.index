@@ -1,0 +1,5 @@
+1665851486763	Extract method 'insertar'
+1665851510122	Extract method 'listar'
+1665851526980	Extract method 'consultarID'
+1665851700066	Extract method 'actualizar'
+1665944295296	Rename type 'Main'

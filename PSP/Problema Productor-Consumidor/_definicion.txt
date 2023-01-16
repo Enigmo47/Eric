@@ -1,0 +1,1 @@
+Uno o más hilos producen datos a procesar y otros hilos los consumen. El problema surge cuando el productor produce datos más rápido que el consumidor los consuma, dando lugar a que el cunsumidor se salte algún dato. Igualmente, el consumidor puede recoger varias veces el mismo dato o puede no tener datos que coger.

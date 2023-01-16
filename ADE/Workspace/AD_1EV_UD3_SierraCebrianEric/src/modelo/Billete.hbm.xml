@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2 dic 2022 17:26:13 by Hibernate Tools 6.1.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="trenes" name="modelo.Billete" optimistic-lock="none" table="billete">
+        <id name="codigo" type="java.lang.Short">
+            <column name="codigo"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="modelo.Estacion" fetch="select" name="estacionByCodigoEstacionDestino">
+            <column name="codigo_estacion_destino" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="modelo.Estacion" fetch="select" name="estacionByCodigoEstacionOrigen">
+            <column name="codigo_estacion_origen" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="modelo.Viajero" fetch="select" name="viajero">
+            <column name="codigo_viajero" not-null="true"/>
+        </many-to-one>
+        <property name="fecha" type="string">
+            <column length="10" name="fecha" not-null="true"/>
+        </property>
+        <property name="horaSalida" type="string">
+            <column length="10" name="hora_salida" not-null="true"/>
+        </property>
+        <property name="horaLlegada" type="string">
+            <column length="10" name="hora_llegada" not-null="true"/>
+        </property>
+        <property name="importe" type="big_decimal">
+            <column name="importe" not-null="true" precision="9" scale="2"/>
+        </property>
+    </class>
+</hibernate-mapping>

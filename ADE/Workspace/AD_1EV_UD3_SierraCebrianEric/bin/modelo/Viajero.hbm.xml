@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2 dic 2022 17:26:13 by Hibernate Tools 6.1.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="trenes" name="modelo.Viajero" optimistic-lock="none" table="viajero">
+        <id name="codigo" type="java.lang.Short">
+            <column name="codigo"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="modelo.Clase" fetch="select" name="clase">
+            <column name="codigo_clase" not-null="true"/>
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column length="40" name="nombre" not-null="true"/>
+        </property>
+        <property name="fechaNacimiento" type="string">
+            <column length="10" name="fecha_nacimiento" not-null="true"/>
+        </property>
+        <property name="lugarResidencia" type="string">
+            <column length="40" name="lugar_residencia" not-null="true"/>
+        </property>
+        <property name="correo" type="string">
+            <column length="40" name="correo" not-null="true"/>
+        </property>
+        <property name="puntos" type="short">
+            <column name="puntos" not-null="true"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="billetes" table="billete">
+            <key>
+                <column name="codigo_viajero" not-null="true"/>
+            </key>
+            <one-to-many class="modelo.Billete"/>
+        </set>
+    </class>
+</hibernate-mapping>

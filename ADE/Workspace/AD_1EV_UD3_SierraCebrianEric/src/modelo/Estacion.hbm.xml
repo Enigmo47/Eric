@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2 dic 2022 17:26:13 by Hibernate Tools 6.1.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="trenes" name="modelo.Estacion" optimistic-lock="none" table="estacion">
+        <id name="codigo" type="java.lang.Short">
+            <column name="codigo"/>
+            <generator class="identity"/>
+        </id>
+        <property name="nombre" type="string">
+            <column length="40" name="nombre" not-null="true"/>
+        </property>
+        <property name="ubicacion" type="string">
+            <column length="40" name="ubicacion" not-null="true"/>
+        </property>
+        <property name="agnoInauguracion" type="short">
+            <column name="agno_inauguracion" not-null="true"/>
+        </property>
+        <property name="vias" type="short">
+            <column name="vias" not-null="true"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="billetesForCodigoEstacionDestino" table="billete">
+            <key>
+                <column name="codigo_estacion_destino" not-null="true"/>
+            </key>
+            <one-to-many class="modelo.Billete"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="billetesForCodigoEstacionOrigen" table="billete">
+            <key>
+                <column name="codigo_estacion_origen" not-null="true"/>
+            </key>
+            <one-to-many class="modelo.Billete"/>
+        </set>
+    </class>
+</hibernate-mapping>

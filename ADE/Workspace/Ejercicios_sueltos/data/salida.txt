@@ -1,0 +1,5 @@
+ainicio
+bmedio inicio
+que tal medio
+Hola medio final
+Buenas final
