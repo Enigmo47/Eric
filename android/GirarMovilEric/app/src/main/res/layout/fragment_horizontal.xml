@@ -10,10 +10,22 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="54dp"
         android:gravity="center|center_horizontal"
         android:text="Horizontal"
         android:textAlignment="center"
         android:textColor="#314BDD"
         android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Página" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"></LinearLayout>
+
 </LinearLayout>

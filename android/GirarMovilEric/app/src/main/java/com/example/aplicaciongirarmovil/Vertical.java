@@ -3,10 +3,15 @@ package com.example.aplicaciongirarmovil;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -40,6 +45,7 @@ public class Vertical extends Fragment {
     public static Vertical newInstance(){
         return new Vertical();
     }
+    private Button miBoton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,12 +53,29 @@ public class Vertical extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View v = inflater.inflate(R.layout.fragment_vertical, container, false);
+
+        miBoton = (Button) v.findViewById(R.id.button2);
+        miBoton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View arg0) {
+                FragmentManager fm = getParentFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                Fra
+
+            }
+        });
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_vertical, container, false);
     }
