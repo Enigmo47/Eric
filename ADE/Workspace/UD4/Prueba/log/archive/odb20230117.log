@@ -1,0 +1,26 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2023-01-17 17:25:08 #1 store] 
+Database 'D:\Documentos\DAM2_DUAL\Workspace\Acceso a datos\UD4\Prueba\data\campeonato.odb' is opened by 6640@PC10
+
+[2023-01-17 17:25:08 #2 store] 
+Configuration path: ?
+
+[2023-01-17 17:25:08 #3 type] 
+Type modelo.Jugador is not enhanced.
+
+[2023-01-17 17:25:08 #4 type] 
+Type modelo.Fecha is not enhanced.
+
+[2023-01-17 17:25:08 #5 type] 
+Type modelo.Equipo is not enhanced.
+
+[2023-01-17 17:25:08 #6 type] 
+Type modelo.Partido is not enhanced.
+
+[2023-01-17 17:25:08 #7 type] 
+Type modelo.Resultado is not enhanced.
+
+[2023-01-17 17:25:08 #8 store] 
+Database 'D:\Documentos\DAM2_DUAL\Workspace\Acceso a datos\UD4\Prueba\data\campeonato.odb' is closed by 6640@PC10
+
