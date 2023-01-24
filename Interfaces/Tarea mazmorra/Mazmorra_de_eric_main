@@ -1,0 +1,154 @@
+import sys
+
+from PyQt6.QtWidgets import (
+    QApplication, QDialog, QMainWindow, QMessageBox,
+)
+from PyQt6.QtGui import QAction
+import random
+from PySide2.QtCore import QApplication, QTimer
+
+from MDE import Ui_Mazmorra_de_Eric
+
+preguntas = ["Entra duro y grande en la boca, pero sale blando y pequeño. ¿Qué es?",
+            "Estando roto es más útil que sin romperse. ¿Qué es?",
+            "Te paras cuando está verde y continúas cuando está rojo. ¿Qué es?",
+            "Hay algo que, aunque te pertenezca, la gente siempre lo utiliza más que tú. ¿Qué es?",
+            "Soy alto siendo joven y corto cuando soy viejo. Resplandezco con la vida y el viento es mi mayor enemigo. ¿Qué soy?",
+            "¿Qué monte era el más alto del mundo antes de descubrir el Everest?",
+            "Estoy en todo pese a estar en nada. ¿Qué soy?",
+            "Crezco a pesar de no estar vivo. No tengo pulmones, pero para vivir necesito el aire. El agua, aunque no tenga boca, me mata. ¿Qué soy?",
+            "¿Cuántos 9 hay entre el 1 y el 100?","Tengo un arco, no soy flecha y sí de madera."]
+respuestas = ["chicle","huevo","sandia","tu nombre","vela","everest","letra","fuego","20","violin"]
+contador = 0
+acertijos = ["¿Cuál es el río más largo de España?",
+            "¿Cuál es el río más largo de la península ibérica?",
+            "¿Cuál es el río más largo del mundo?",
+            "¿Cuál es la montaña más alta de España?",
+            "¿Cuál es la montaña más alta del mundo?",
+            "¿Cuál es el océano más grande?",
+            "¿Cuál es el país con más extensión?",
+            "¿Cuál es el país más poblado?"]
+soluciones = ["ebro", "tajo", "amazonas","teide","everest","pacifico","rusia","india"]
+
+
+class Window(QMainWindow):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.setupUi()
+    
+    def setupUi(self):
+        self.ui = Ui_Mazmorra_de_Eric()
+        self.ui.setupUi(self)
+        self.createMenu()
+        
+        
+        self.initializeUI()
+        self.show()
+        
+
+    def initializeUI(self):
+        self.ui.descripcion.setText("")
+        self.ui.norte.setEnabled(False)
+        self.ui.centro.setEnabled(False)
+        self.ui.sur.setEnabled(False)
+        self.ui.este.setEnabled(False)
+        self.ui.oeste.setEnabled(False)
+        self.ui.resultado.setText("")
+        self.ui.afirmativo.setVisible(False)  
+        self.ui.negativo.setVisible(False)
+        self.ui.r1.setEnabled(False)  
+        self.ui.r1.setText("")  
+        self.ui.r2.setEnabled(False) 
+        self.ui.r2.setText("") 
+        self.ui.r3.setEnabled(False)
+        self.ui.r3.setText("")  
+        self.ui.r4.setEnabled(False)  
+        self.ui.r4.setText("")
+
+        self.ui.norte.clicked.connect(self.salaNorte)
+
+
+    def ayuda(self):
+        self.popup= QMessageBox()
+        self.popup.setWindowTitle("Guia")
+        self.popup.setText("""Bienvenido a mi Mazmorra,para jugar 
+puedes seleccionar en la parte del menu arriba la opcion "Jugar",
+una vez haya sido dado este boton, se habilitaran las distintas 
+habitaciones. Puedes ir seleccionando una a una las distintas 
+habitaciones y para entrar tendras que darle al boton de abajo 
+"jugar", ademas podras salir de una habitacion con el boton "salir".
+
+Mucha suerte
+    """)
+        self.popup.exec()
+
+
+    def ataque(self):
+        atk = random.randint(0, 100)
+        if (atk >= 60):
+            self.ui.resultado.setText("El aventurero acabó con el monstruo y volvió a la sala inicial a la espera de su siguiente reto...")
+        else:
+            self.ui.resultado.setText("El aventurero falló el ataque torpemente, al hacerlo este se resvaló y el monstruo acabó con él")
+
+
+    def huir(self):
+        self.ui.resultado.setText("El aventurero, asustado ante tal peligro decidió volver a la sala central para afrontar otro desafio antes de volver")
+
+    def salir(self):
+        sys.exit()
+
+    def salaNorte(self):
+        self.ui.descripcion.setText("El aventurero eligió la sala norte, donde apareció un monstruo que se avalanzó sobre el aventurero")
+        self.ui.norte.setStyleSheet("border-radius: 10px;\n"
+"border: 1px solid black;\n"
+"background-color: rgb(100,255,100)\n")
+        self.ui.centro.setEnabled(False)
+        self.ui.sur.setEnabled(False)
+        self.ui.este.setEnabled(False)
+        self.ui.oeste.setEnabled(False)
+        enemigo = random.randint(0, 100)
+        if (enemigo >= 90):
+            self.ui.descripcion.setText("El aventurero, ha muerto...")
+        else:
+            self.ui.descripcion.setText(" El aventurero sobrevivió, contraatacará? Y/N")
+            self.ui.afirmativo.setEnabled(True)
+            self.ui.negativo.setEnabled(True)
+            self.ui.afirmativo.setText("Y")
+            self.ui.negativo.setText("N")
+            self.ui.afirmativo.clicked.connect(self.ataque)
+            #self.ui.negativo.clicked.connect(self.huir)
+    def play(self):
+        self.ui.norte.setEnabled(True)
+        self.ui.sur.setEnabled(True)
+        self.ui.oeste.setEnabled(True)
+        self.ui.este.setEnabled(True)
+        self.ui.afirmativo.setVisible(True)  
+        self.ui.negativo.setVisible(True)  
+        self.ui.centro.setStyleSheet("border-radius: 10px;\n"
+"border: 1px solid black;\n"
+"background-color: rgb(255,255,255)\n")
+
+        self.ui.centro.setStyleSheet("border-radius: 10px;\n"
+"border: 1px solid black;\n"
+"background-color: rgb(255,255,255)\n")
+        self.ui.afirmativo.setStyleSheet("border-radius: 10px;\n"
+"border: 1px solid black;\n"
+"background-color: rgb(255,255,255)\n")
+        self.ui.negativo.setStyleSheet("border-radius: 10px;\n"
+        "border: 1px solid black;\n"
+        "background-color: rgb(255,255,255)\n") 
+
+
+    def createMenu(self):
+        self.ui.actionJugar_2.triggered.connect(self.play)
+        self.ui.actionJugar_2.setShortcut("Ctrl+W")
+        self.ui.actionAyuda.triggered.connect(self.ayuda)
+        self.ui.actionSalir.triggered.connect(self.salir)
+        self.ui.actionSalir.setShortcut("Ctrl+Q")
+
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    win = Window()
+    win.show()
+    sys.exit(app.exec())

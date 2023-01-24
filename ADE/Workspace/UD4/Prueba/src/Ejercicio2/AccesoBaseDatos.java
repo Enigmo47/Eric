@@ -14,10 +14,8 @@ import modelo.Partido;
 
 public class AccesoBaseDatos {
 
-	private final static String BASEDATOS= "data/campeonato.odb";
-	
 	public static Boolean insertar(Equipo equipo) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory(BASEDATOS);
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("data/campeonato.odb");
 		EntityManager conexion = null;
 
 		try {
@@ -27,7 +25,7 @@ public class AccesoBaseDatos {
 			conexion.getTransaction().commit();
 			return true;
 		}catch (Exception e) {
-			throw e;
+			return false;
 		}
 		finally {
 			if (conexion != null) {
@@ -38,7 +36,7 @@ public class AccesoBaseDatos {
 	}
 	
 	public static List<Equipo> consultar() {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory(BASEDATOS);
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("data/campeonato.odb");
 		EntityManager conexion = null;
 		try {
 			conexion = emf.createEntityManager();
@@ -57,7 +55,7 @@ public class AccesoBaseDatos {
 	}
 	
 	public static Equipo consultarCodigo(String nombre) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory(BASEDATOS);
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("data/campeonato.odb");
 		EntityManager conexion = null;
 		Equipo equipo=null;
 		try {
@@ -75,7 +73,7 @@ public class AccesoBaseDatos {
 	}
 	
 	public static Boolean actualizar(String nombre, String ciudad) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory(BASEDATOS);
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("data/campeonato.odb");
 		EntityManager conexion = null;
 		
 		try {
@@ -99,11 +97,11 @@ public class AccesoBaseDatos {
 	}
 	
 	public static List<Jugador> consultarEquipo(String nombre) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory(BASEDATOS);
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("data/campeonato.odb");
 		EntityManager conexion = null;
 		try {
 			conexion = emf.createEntityManager();
-			TypedQuery<Jugador> consulta = conexion.createQuery("select j from Equipo e, Jugador j where e.jugadores.contains(j) and e.nombre ='"+nombre+"' ORDER BY j.codigo ASC", 
+			TypedQuery<Jugador> consulta = conexion.createQuery("select j from Equipo e, Jugador j where e.jugadores.contains(j) and e.nombre ='"+nombre+"'", 
 			                                                    Jugador.class);
 			List<Jugador> jugadores = consulta.getResultList();
 			return jugadores;
@@ -118,7 +116,7 @@ public class AccesoBaseDatos {
 	}
 	
 	public static List<Partido> consultarPartido(String nombre) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory(BASEDATOS);
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("data/campeonato.odb");
 		EntityManager conexion = null;
 		try {
 			conexion = emf.createEntityManager();
@@ -139,14 +137,14 @@ public class AccesoBaseDatos {
 	public static void eliminar (String codigo) {
 	
 
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory(BASEDATOS);
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("data/campeonato.odb");
 		EntityManager conexion = null;
 		
 		try {
 			conexion = emf.createEntityManager();
-			Equipo equipo = conexion.find(Equipo.class, codigo);
+			Jugador jugador = conexion.find(Jugador.class, codigo);
 			conexion.getTransaction().begin();
-			conexion.remove(equipo);
+			conexion.remove(jugador);
 			conexion.getTransaction().commit();
 		}
 		finally {

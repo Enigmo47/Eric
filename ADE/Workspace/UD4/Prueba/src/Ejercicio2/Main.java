@@ -5,8 +5,6 @@ import java.util.List;
 import entrada.Teclado;
 import modelo.Equipo;
 import modelo.Fecha;
-import modelo.Jugador;
-import modelo.Partido;
 
 public class Main {
 
@@ -90,7 +88,8 @@ public class Main {
 			for (Equipo equipo: equipos) {
 				System.out.println(equipo.toString());
 			}
-			System.out.println("Se han consultado " + equipos.size() + " equipos de la base de datos.");
+			System.out.println("Se han consultado " + equipos.size() + 
+			                   " equipos de la base de datos.");
 		}
 	}
 	
@@ -109,9 +108,8 @@ public class Main {
 	private static void actualizar() {
 		String nombre=Teclado.leerCadena("Dime el nombre del equipo");
 		String ciudad=Teclado.leerCadena("Dime la ciudad del equipo");
-		Equipo equipo = AccesoBaseDatos.consultarCodigo(nombre);
-		if(equipo!=null) {
-			AccesoBaseDatos.actualizar(nombre,ciudad);
+		
+		if(AccesoBaseDatos.actualizar(nombre,ciudad)) {
 			System.out.println("Se ha insertado un equipo en la base de datos.");
 		}else {
 			System.out.println("No existe ningún equipo con ese nombre en la base de datos.");
@@ -122,33 +120,25 @@ public class Main {
 	}
 	
 	private static void eliminarClase() {
-		Boolean sePuede=true;
 		String nombre = Teclado.leerCadena("Dime el nombre del equipo");
 		Equipo equipo = AccesoBaseDatos.consultarCodigo(nombre);
 		if(equipo!=null) {
-			List<Jugador> equipos =AccesoBaseDatos.consultarEquipo(nombre);
+			List equipos =AccesoBaseDatos.consultarEquipo(nombre);
+		
+
 			if(equipos.size()!=0) {
-				sePuede=false;
 				System.out.println("Se han encontrado " + equipos.size() + " jugadores relacionados con ese equipo en la base de datos:");
-				for(Jugador jug: equipos) {
-					System.out.println(jug);
-				}
-			}
-			System.out.println();
-			List<Partido> partidos =AccesoBaseDatos.consultarPartido(nombre);
-			if(partidos.size()!=0) {
-				sePuede=false;
-				System.out.println("Se han encontrado " + partidos.size() + " partidos relacionados con ese equipo en la base de datos:");
-				for(Partido part: partidos) {
-					System.out.println(part);
-				}
-			}
-			
-			if(sePuede==true) {
+				System.out.println(equipos);
+			}else {
+				List partidos =AccesoBaseDatos.consultarPartido(nombre);
+				if(partidos.size()!=0) {
+					System.out.println("Se han encontrado"+partidos.size()+"partidos relacionados con ese equipo en la base de datos:");
+					System.out.println(partidos);
+				}else{
 				AccesoBaseDatos.eliminar(nombre);
 				System.out.println("Se ha eliminado un equipo de la base de datos.");
+				}
 			}
-
 		}else {
 			System.out.println("No existe ningún equipo con ese código en la base de datos.");
 		}
