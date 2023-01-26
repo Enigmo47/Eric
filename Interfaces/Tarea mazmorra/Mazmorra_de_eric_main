@@ -9,16 +9,7 @@ import random
 
 from MDE import Ui_Mazmorra_de_Eric
 
-preguntas = ["Entra duro y grande en la boca, pero sale blando y pequeño. ¿Qué es?",
-            "Estando roto es más útil que sin romperse. ¿Qué es?",
-            "Te paras cuando está verde y continúas cuando está rojo. ¿Qué es?",
-            "Hay algo que, aunque te pertenezca, la gente siempre lo utiliza más que tú. ¿Qué es?",
-            "Soy alto siendo joven y corto cuando soy viejo. Resplandezco con la vida y el viento es mi mayor enemigo. ¿Qué soy?",
-            "¿Qué monte era el más alto del mundo antes de descubrir el Everest?",
-            "Estoy en todo pese a estar en nada. ¿Qué soy?",
-            "Crezco a pesar de no estar vivo. No tengo pulmones, pero para vivir necesito el aire. El agua, aunque no tenga boca, me mata. ¿Qué soy?",
-            "¿Cuántos 9 hay entre el 1 y el 100?","Tengo un arco, no soy flecha y sí de madera."]
-respuestas = ["chicle","huevo","sandia","tu nombre","vela","everest","letra","fuego","20","violin"]
+   
 contador = 0
 acertijos = ["¿Cuál es el río más largo de España?",
             "¿Cuál es el río más largo de la península ibérica?",
@@ -202,11 +193,23 @@ Mucha suerte
             self.ui.resultado.setText("No funcionó el número y el aventurero ha de volver a salir y entrar en la sala")
 
     def salaEste(self):#botones estesi y esteno
+
+        preguntas = ["Entra duro y grande en la boca, pero sale blando y pequeño. ¿Qué es?",
+            "Estando roto es más útil que sin romperse. ¿Qué es?",
+            "Te paras cuando está verde y continúas cuando está rojo. ¿Qué es?",
+            "Hay algo que, aunque te pertenezca, la gente siempre lo utiliza más que tú. ¿Qué es?",
+            "Soy alto siendo joven y corto cuando soy viejo. Resplandezco con la vida y el viento es mi mayor enemigo. ¿Qué soy?",
+            "¿Qué monte era el más alto del mundo antes de descubrir el Everest?",
+            "Estoy en todo pese a estar en nada. ¿Qué soy?",
+            "Crezco a pesar de no estar vivo. No tengo pulmones, pero para vivir necesito el aire. El agua, aunque no tenga boca, me mata. ¿Qué soy?",
+            "¿Cuántos 9 hay entre el 1 y el 100?","Tengo un arco, no soy flecha y sí de madera."]
+        respuestas = ["chicle","huevo","sandia","tu nombre","vela","everest","letra","fuego","20","violin"]
         self.ui.descripcion.setText("El aventurero se adentró en la sala este, donde se encontró con un sabio azul, este le hizo una pregunta....")
         numP = random.randint(0,9)
-        print(str(self.preguntas[numP]))
-        respuesta = input("Respuesta: ")
-        if(respuestas[numP].lower() in respuesta.lower()):
+
+        self.ui.resultado.setText(str(preguntas[numP]))
+        respuesta = self.ui.resultado.setText("Respuesta: ")
+        if(self.respuestas[self.numP].lower() in respuesta.lower()):
             print("El sabio quedó atónito ante la respuesta correcta del aventutrero y le permitio volver victorioso a la sala central")
             self.contador = contador + 1
         else:
