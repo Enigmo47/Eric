@@ -842,7 +842,7 @@ background-color : white;</string>
       <string>PushButton</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="oesteno">
      <property name="geometry">
       <rect>
        <x>250</x>
