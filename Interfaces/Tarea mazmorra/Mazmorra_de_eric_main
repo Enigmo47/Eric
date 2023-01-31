@@ -9,18 +9,6 @@ import random
 
 from MDE import Ui_Mazmorra_de_Eric
 
-   
-contador = 0
-acertijos = ["¿Cuál es el río más largo de España?",
-            "¿Cuál es el río más largo de la península ibérica?",
-            "¿Cuál es el río más largo del mundo?",
-            "¿Cuál es la montaña más alta de España?",
-            "¿Cuál es la montaña más alta del mundo?",
-            "¿Cuál es el océano más grande?",
-            "¿Cuál es el país con más extensión?",
-            "¿Cuál es el país más poblado?"]
-soluciones = ["ebro", "tajo", "amazonas","teide","everest","pacifico","rusia","india"]
-
 
 class Window(QMainWindow):
     def __init__(self, parent=None):
@@ -38,6 +26,7 @@ class Window(QMainWindow):
         
 
     def initializeUI(self):
+        #contador = 0
         self.ui.descripcion.setText("")
         self.ui.norte.setEnabled(False)
         self.ui.centro.setEnabled(False)
@@ -68,7 +57,13 @@ class Window(QMainWindow):
         self.ui.este.clicked.connect(self.salaEste)
         self.ui.oeste.clicked.connect(self.salaOeste)
         self.ui.centro.clicked.connect(self.salaCentro)
+        
 
+
+    #def win(self):
+    #    if self.contador == 4:
+    #        self.ui.centro.setEnabled(True)
+    #        self.ui.centro.triggered.connect(self.salaCentro)
 
     def ayuda(self):
         self.popup= QMessageBox()
@@ -132,12 +127,13 @@ Mucha suerte
             self.ui.negativo.setEnabled(False)
             self.ui.afirmativo.setVisible(False)
             self.ui.negativo.setVisible(False)
-            self.contador = contador + 1
+            #contador = contador + 1
+            #self.win()
         else:
             self.ui.resultado.setText("El aventurero falló el ataque torpemente,\n al hacerlo este se resvaló y el monstruo acabó con él")
             self.ui.norte.setStyleSheet("border-radius: 10px;\n"
 "border: 1px solid black;\n")
-        self.gameover()
+            self.gameover()
         self.limpiar()
 
 
@@ -147,13 +143,14 @@ Mucha suerte
 
     def verdadero(self):
         self.ui.resultado.setText("El sabio quedó atónito ante la respuesta correcta del aventutrero y le permitio volver victorioso a la sala central")
-        self.contador = contador + 1
-        self.limpiar
+        #contador = contador + 1
+        self.limpiar()
+        #self.win()
         
     def falso(self):
         self.ui.resultado.setText("El sabio miró con enfado al aventurero y le lanzó un rayo que acabó con su vida")
         self.gameover()
-        self.limpiar
+        self.limpiar()
 
     def salir(self):
         sys.exit()
@@ -229,7 +226,8 @@ Mucha suerte
             self.ui.sur.setEnabled(False)
             self.ui.este.setEnabled(True)
             self.ui.oeste.setEnabled(True)
-            self.contador = contador + 1
+            #contador = contador + 1
+            #self.win()
         else:
             self.ui.resultado.setText("No funcionó el número y el aventurero ha de volver a salir y entrar en la sala")
 
@@ -238,6 +236,8 @@ Mucha suerte
         self.ui.oeste.setEnabled(False)
         self.ui.estesi.setVisible(True)  
         self.ui.esteno.setVisible(True) 
+        self.ui.estesi.setEnabled(True)
+        self.ui.esteno.setEnabled(True)
         self.ui.descripcion.setText("El aventurero se adentró en la sala este,\n donde se encontró con un sabio azul, este le hizo\n una pregunta....\nTengo un arco, no soy flecha y sí de madera.")
         self.ui.resultado.setText("La respuesta es ballesta?")
         self.ui.estesi.setText("Falso")
@@ -252,7 +252,9 @@ Mucha suerte
         self.ui.centro.setEnabled(False)
         self.ui.oeste.setEnabled(False)
         self.ui.oestesi.setVisible(True)  
-        self.ui.oesteno.setVisible(True) 
+        self.ui.oesteno.setVisible(True)
+        self.ui.oestesi.setEnabled(True)
+        self.ui.oesteno.setEnabled(True) 
         self.ui.descripcion.setText("El aventurero se adentró en la sala oeste,\n donde se encontró con un sabio rojo,\n este le hizo una pregunta....\n¿Cuál es el río más largo de España?")
         self.ui.resultado.setText("La respuesta es el rio ebro?")
         self.ui.oestesi.setText("Verdadero")
@@ -270,9 +272,7 @@ Mucha suerte
         self.ui.actionSalir.triggered.connect(self.salir)
         self.ui.actionSalir.setShortcut("Ctrl+Q")
 
-if self.contador == 4:
-    self.ui.centro.setEnabled(True)
-    self.ui.centro.triggered.connect(self.salaCentro)
+
 
 
 
