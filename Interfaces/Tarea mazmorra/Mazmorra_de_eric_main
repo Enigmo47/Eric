@@ -84,6 +84,22 @@ Mucha suerte
     """)
         self.popup.exec()
 
+    def salaCentro(self):
+        self.popup= QMessageBox()
+        self.popup.setWindowTitle("fin")
+        self.popup.setText("""El aventurero regresó exhausto tras las 4 salas y se sentó a descansar junto a una fogata
+    """)
+        self.popup.exec()
+
+
+    def gameover(self):
+        self.popup= QMessageBox()
+        self.popup.setWindowTitle("fin")
+        self.popup.setText("""El aventurero erró su misión y acabó lamentandose eternamente atrapado en la mazmorra
+    """)
+        self.popup.exec()
+
+
 
     def limpiar(self):
         self.ui.afirmativo.setText("")
@@ -121,6 +137,7 @@ Mucha suerte
             self.ui.resultado.setText("El aventurero falló el ataque torpemente,\n al hacerlo este se resvaló y el monstruo acabó con él")
             self.ui.norte.setStyleSheet("border-radius: 10px;\n"
 "border: 1px solid black;\n")
+        self.gameover()
         self.limpiar()
 
 
@@ -135,6 +152,7 @@ Mucha suerte
         
     def falso(self):
         self.ui.resultado.setText("El sabio miró con enfado al aventurero y le lanzó un rayo que acabó con su vida")
+        self.gameover()
         self.limpiar
 
     def salir(self):
@@ -244,10 +262,6 @@ Mucha suerte
         self.ui.oeste.setEnabled(False)
     
 
-    def salaCentro(self):
-        self.ui.descripcion("El aventurero regresó exhausto tras las 4 salas y se sentó a descansar junto a una fogata")
-
-
 
     def createMenu(self):
         self.ui.actionJugar_2.triggered.connect(self.play)
@@ -256,6 +270,9 @@ Mucha suerte
         self.ui.actionSalir.triggered.connect(self.salir)
         self.ui.actionSalir.setShortcut("Ctrl+Q")
 
+if self.contador == 4:
+    self.ui.centro.setEnabled(True)
+    self.ui.centro.triggered.connect(self.salaCentro)
 
 
 
