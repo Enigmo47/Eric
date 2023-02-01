@@ -6,13 +6,17 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="package Ejercicio4;"/>
+		<item key="selection" value="hora"/>
 		<list key="findhistory">
+			<item value="edad"/>
+			<item value="Edades"/>
 			<item value="package Ejercicio4;"/>
 			<item value="url"/>
 			<item value="package prueba;"/>
 		</list>
 		<list key="replacehistory">
+			<item value="hora"/>
+			<item value="Horas"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
