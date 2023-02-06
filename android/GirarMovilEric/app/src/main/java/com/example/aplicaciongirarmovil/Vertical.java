@@ -71,7 +71,7 @@ public class Vertical extends Fragment {
             public void onClick(View arg0) {
                 FragmentManager fm = getParentFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
-                Fra
+
 
             }
         });
