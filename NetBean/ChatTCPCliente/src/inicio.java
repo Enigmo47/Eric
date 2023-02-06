@@ -33,9 +33,9 @@ public class inicio extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        nombre = new javax.swing.JTextField();
-        ip = new javax.swing.JTextField();
-        puerto = new javax.swing.JTextField();
+        et1 = new javax.swing.JTextField();
+        et2 = new javax.swing.JTextField();
+        et3 = new javax.swing.JTextField();
         tv2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,9 +61,9 @@ public class inicio extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Serif", 2, 14)); // NOI18N
         jLabel4.setText("Puerto:");
 
-        nombre.addActionListener(new java.awt.event.ActionListener() {
+        et1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreActionPerformed(evt);
+                et1ActionPerformed(evt);
             }
         });
 
@@ -82,15 +82,15 @@ public class inicio extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addGap(18, 18, 18)
-                                .addComponent(puerto, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE))
+                                .addComponent(et3, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel3))
                                 .addGap(9, 9, 9)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(ip, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
-                                    .addComponent(nombre)))))
+                                    .addComponent(et2, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                                    .addComponent(et1)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(145, 145, 145)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,15 +111,15 @@ public class inicio extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(et1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(ip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(et2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(puerto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(et3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(b1)
                 .addGap(29, 29, 29))
@@ -128,22 +128,22 @@ public class inicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreActionPerformed
+    private void et1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_et1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nombreActionPerformed
+    }//GEN-LAST:event_et1ActionPerformed
 
     private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
-        if(nombre.getText().trim().equals("")){
+        if(et1.getText().trim().equals("")){
             tv2.setText("Error");
         }
-        else if(ip.getText().trim().equals("")){
+        else if(et2.getText().trim().equals("")){
             tv2.setText("Error");
-        }else if(puerto.getText().trim().equals("")){
+        }else if(et3.getText().trim().equals("")){
             tv2.setText("Error");
         }
         else{
             try{
-                new Chat(nombre.getText().trim(),ip.getText(),Integer.valueOf(puerto.getText().trim())).setVisible(true);
+                new Chat(et1.getText().trim(),et2.getText(),Integer.valueOf(et3.getText().trim())).setVisible(true);
             } catch (IOException e){
                 tv2.setText("Error");
             }
@@ -188,13 +188,13 @@ public class inicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b1;
-    private javax.swing.JTextField ip;
+    private javax.swing.JTextField et1;
+    private javax.swing.JTextField et2;
+    private javax.swing.JTextField et3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField nombre;
-    private javax.swing.JTextField puerto;
     private javax.swing.JLabel tv2;
     // End of variables declaration//GEN-END:variables
 }

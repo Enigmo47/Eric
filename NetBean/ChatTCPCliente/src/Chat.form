@@ -31,7 +31,7 @@
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="mensaje" min="-2" pref="303" max="-2" attributes="0"/>
+                      <Component id="et4" min="-2" pref="303" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="b2" min="-2" pref="53" max="-2" attributes="0"/>
                   </Group>
@@ -48,7 +48,7 @@
               <Component id="jScrollPane1" min="-2" pref="246" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="mensaje" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="et4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="b2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="13" max="32767" attributes="0"/>
@@ -64,7 +64,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="ventanaChat">
+        <Component class="javax.swing.JTextArea" name="tv">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="columns" type="int" value="20"/>
@@ -73,7 +73,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JTextField" name="mensaje">
+    <Component class="javax.swing.JTextField" name="et4">
     </Component>
     <Component class="javax.swing.JButton" name="b2">
       <Properties>

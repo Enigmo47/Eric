@@ -30,14 +30,14 @@ public class Chat extends javax.swing.JFrame {
      * Creates new form Chat
      */
     public Chat(String nombre, String ipHost, int puerto) throws IOException {
-        this.ventanaChat.setEditable(false);
         this.setTitle(this.getTitle() + " - " +  nombre);
         this.nombre = nombre;
+        socket= new Socket(ipHost, puerto);
         
         fEntrada = new BufferedReader (new InputStreamReader( socket.getInputStream()));
         fSalida = new PrintWriter(socket.getOutputStream(),true);
         
-        hiloLeer = new HiloLeer(ventanaChat, fEntrada);
+        hiloLeer = new HiloLeer(tv, fEntrada);
         hiloLeer.start();
         initComponents();
         
@@ -53,8 +53,8 @@ public class Chat extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        ventanaChat = new javax.swing.JTextArea();
-        mensaje = new javax.swing.JTextField();
+        tv = new javax.swing.JTextArea();
+        et4 = new javax.swing.JTextField();
         b2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,10 +64,10 @@ public class Chat extends javax.swing.JFrame {
             }
         });
 
-        ventanaChat.setEditable(false);
-        ventanaChat.setColumns(20);
-        ventanaChat.setRows(5);
-        jScrollPane1.setViewportView(ventanaChat);
+        tv.setEditable(false);
+        tv.setColumns(20);
+        tv.setRows(5);
+        jScrollPane1.setViewportView(tv);
 
         b2.setText("➭");
         b2.addActionListener(new java.awt.event.ActionListener() {
@@ -85,7 +85,7 @@ public class Chat extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(et4, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(b2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -98,7 +98,7 @@ public class Chat extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(et4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(b2))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
@@ -109,10 +109,10 @@ public class Chat extends javax.swing.JFrame {
     private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
         
         try {
-            new HiloEscribir(fSalida, nombre, mensaje.getText()).start();
+            new HiloEscribir(fSalida, nombre, et4.getText()).start();
         } catch (IOException ex) {
         }
-            mensaje.setText("");
+            et4.setText("");
         
     }//GEN-LAST:event_b2ActionPerformed
 
@@ -165,8 +165,8 @@ public class Chat extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b2;
+    private javax.swing.JTextField et4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField mensaje;
-    private javax.swing.JTextArea ventanaChat;
+    private javax.swing.JTextArea tv;
     // End of variables declaration//GEN-END:variables
 }

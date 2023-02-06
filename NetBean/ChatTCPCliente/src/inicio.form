@@ -34,7 +34,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="puerto" pref="171" max="32767" attributes="0"/>
+                              <Component id="et3" pref="171" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -43,8 +43,8 @@
                               </Group>
                               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="ip" pref="174" max="32767" attributes="0"/>
-                                  <Component id="nombre" max="32767" attributes="0"/>
+                                  <Component id="et2" pref="174" max="32767" attributes="0"/>
+                                  <Component id="et1" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -75,17 +75,17 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="nombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="et1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  <Component id="ip" min="-2" max="-2" attributes="0"/>
+                  <Component id="et2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="puerto" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="et3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="49" max="32767" attributes="0"/>
               <Component id="b1" min="-2" max="-2" attributes="0"/>
@@ -138,14 +138,14 @@
         <Property name="text" type="java.lang.String" value="Puerto:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="nombre">
+    <Component class="javax.swing.JTextField" name="et1">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="et1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="ip">
+    <Component class="javax.swing.JTextField" name="et2">
     </Component>
-    <Component class="javax.swing.JTextField" name="puerto">
+    <Component class="javax.swing.JTextField" name="et3">
     </Component>
     <Component class="javax.swing.JLabel" name="tv2">
       <Properties>
