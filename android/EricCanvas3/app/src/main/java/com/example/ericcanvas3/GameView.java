@@ -15,7 +15,6 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-
 public class GameView extends SurfaceView implements Runnable {
 
     private boolean mRunning;
@@ -48,7 +47,6 @@ public class GameView extends SurfaceView implements Runnable {
         mPath = new Path();
     }
 
-
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
@@ -61,11 +59,9 @@ public class GameView extends SurfaceView implements Runnable {
         // Set font size proportional to view size.
         mPaint.setTextSize(mViewHeight / 5);
 
-        mBitmap = BitmapFactory.decodeResource(
-                mContext.getResources(), R.drawable.android);
+        mBitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.android);
         setUpBitmap();
     }
-
 
     public void run() {
 
@@ -78,7 +74,6 @@ public class GameView extends SurfaceView implements Runnable {
                 int y = mFlashlightCone.getY();
                 int radius = mFlashlightCone.getRadius();
 
-
                 canvas = mSurfaceHolder.lockCanvas();
 
                 canvas.save();
@@ -86,7 +81,6 @@ public class GameView extends SurfaceView implements Runnable {
                 canvas.drawBitmap(mBitmap, mBitmapX, mBitmapY, mPaint);
 
                 mPath.addCircle(x, y, radius, Path.Direction.CCW);
-
 
                 if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
                     canvas.clipPath(mPath, Region.Op.DIFFERENCE);
@@ -96,13 +90,10 @@ public class GameView extends SurfaceView implements Runnable {
 
                 canvas.drawColor(Color.BLACK);
 
-
-                if (x > mWinnerRect.left && x < mWinnerRect.right
-                        && y > mWinnerRect.top && y < mWinnerRect.bottom) {
-                    canvas.drawColor(Color.WHITE);
+                if (x > mWinnerRect.left && x < mWinnerRect.right && y > mWinnerRect.top && y < mWinnerRect.bottom) {
+                    canvas.drawColor(Color.MAGENTA);
                     canvas.drawBitmap(mBitmap, mBitmapX, mBitmapY, mPaint);
-                    canvas.drawText(
-                            "WIN!", mViewWidth / 3, mViewHeight / 2, mPaint);
+                    canvas.drawText("WIN!", mViewWidth / 3, mViewHeight / 2, mPaint);
                 }
                 mPath.rewind();
                 canvas.restore();
@@ -112,22 +103,15 @@ public class GameView extends SurfaceView implements Runnable {
         }
     }
 
-
     private void updateFrame(int newX, int newY) {
         mFlashlightCone.update(newX, newY);
     }
 
-
     private void setUpBitmap() {
-        mBitmapX = (int) Math.floor(
-                Math.random() * (mViewWidth - mBitmap.getWidth()));
-        mBitmapY = (int) Math.floor(
-                Math.random() * (mViewHeight - mBitmap.getHeight()));
-        mWinnerRect = new RectF(mBitmapX, mBitmapY,
-                mBitmapX + mBitmap.getWidth(),
-                mBitmapY + mBitmap.getHeight());
+        mBitmapX = (int) Math.floor(Math.random() * (mViewWidth - mBitmap.getWidth()));
+        mBitmapY = (int) Math.floor(Math.random() * (mViewHeight - mBitmap.getHeight()));
+        mWinnerRect = new RectF(mBitmapX, mBitmapY, mBitmapX + mBitmap.getWidth(), mBitmapY + mBitmap.getHeight());
     }
-
 
     public void pause() {
         mRunning = false;
@@ -136,7 +120,6 @@ public class GameView extends SurfaceView implements Runnable {
         } catch (InterruptedException e) {
         }
     }
-
 
     public void resume() {
         mRunning = true;

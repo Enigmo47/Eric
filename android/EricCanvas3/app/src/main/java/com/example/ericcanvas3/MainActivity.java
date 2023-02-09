@@ -7,8 +7,6 @@ import static android.view.View.SYSTEM_UI_FLAG_FULLSCREEN;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
-
 public class MainActivity extends AppCompatActivity {
 
     private GameView mGameView;
@@ -16,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
@@ -31,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         mGameView.pause();
     }
-
 
     @Override
     protected void onResume() {

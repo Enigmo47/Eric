@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace 'com.example.ericcanvas2'
-    compileSdk 29
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.ericcanvas2"

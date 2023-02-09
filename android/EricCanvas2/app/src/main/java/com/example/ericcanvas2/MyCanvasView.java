@@ -1,4 +1,5 @@
 package com.example.ericcanvas2;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -11,7 +12,6 @@ import android.view.View;
 import android.content.res.Resources;
 
 import androidx.core.content.res.ResourcesCompat;
-
 
 public class MyCanvasView extends View {
 
@@ -30,10 +30,8 @@ public class MyCanvasView extends View {
     public MyCanvasView(Context context, AttributeSet attributeSet) {
         super(context);
 
-        mBackgroundColor = ResourcesCompat.getColor(getResources(),
-                R.color.opaque_orange, null);
-        mDrawColor = ResourcesCompat.getColor(getResources(),
-                R.color.opaque_yellow, null);
+        mBackgroundColor = ResourcesCompat.getColor(getResources(), R.color.red, null);
+        mDrawColor = ResourcesCompat.getColor(getResources(), R.color.teal_200, null);
 
         mPath = new Path();
         mPaint = new Paint();
@@ -47,27 +45,24 @@ public class MyCanvasView extends View {
         mPaint.setStrokeWidth(12);
     }
 
-
     @Override
-    protected void onSizeChanged(int width, int height,
-                                 int oldWidth, int oldHeight) {
+    protected void onSizeChanged(int width, int height, int oldWidth, int oldHeight) {
         super.onSizeChanged(width, height, oldWidth, oldHeight);
         mExtraBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         mExtraCanvas = new Canvas(mExtraBitmap);
         mExtraCanvas.drawColor(mBackgroundColor);
 
         int inset = 40;
-        mFrame = new Rect (inset, inset, width - inset, height - inset);
+        mFrame = new Rect(inset, inset, width - inset, height - inset);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
         canvas.drawBitmap(mExtraBitmap, 0, 0, null);
-
         canvas.drawRect(mFrame, mPaint);
     }
+
     private float mX, mY;
     private static final float TOUCH_TOLERANCE = 4;
 
@@ -82,7 +77,7 @@ public class MyCanvasView extends View {
         float dy = Math.abs(y - mY);
         if (dx >= TOUCH_TOLERANCE || dy >= TOUCH_TOLERANCE) {
 
-            mPath.quadTo(mX, mY, (x + mX)/2, (y + mY)/2);
+            mPath.quadTo(mX, mY, (x + mX) / 2, (y + mY) / 2);
             mX = x;
             mY = y;
 
@@ -115,9 +110,11 @@ public class MyCanvasView extends View {
         }
         return true;
     }
+
     public static int getScreenWidth() {
         return Resources.getSystem().getDisplayMetrics().widthPixels;
     }
+
     public static int getScreenHeight() {
         return Resources.getSystem().getDisplayMetrics().heightPixels;
     }
