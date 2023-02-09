@@ -1,15 +1,16 @@
 plugins {
     id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
 }
 
 android {
-    namespace 'com.example.ericcanvas2'
-    compileSdk 29
+    namespace 'com.example.ericcanvas3'
+    compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.ericcanvas2"
-        minSdk 33
-        targetSdk 33
+        applicationId "com.example.ericcanvas3"
+        minSdk 21
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 
@@ -26,11 +27,15 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.6.0'
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
