@@ -49,7 +49,7 @@ public class GestorFichajes {
 			}
 		} while (opcion != 0);
 	}
-
+	//falta rollback
 	public static void insertar() {
 		String denominacion = Teclado.leerCadena("Dime la denominacion del departamento");
 		Double presupuesto = Teclado.leerReal("Dime el presupuesto para el departamento");
@@ -62,7 +62,7 @@ public class GestorFichajes {
 		}
 
 	}
-
+	//revisar porque está mál
 	private static void eliminarDepartamento() {
 		int codigo = Teclado.leerEntero("Dime el codigo del departamento");
 		Departamento departamento = AccesoFichajes.consultarCodigo(codigo);
@@ -82,7 +82,7 @@ public class GestorFichajes {
 		}
 
 	}
-
+	//No hace la consulta, no muestra lo correcto por consola, no hace consulta del departamento, No actualiza, No se muestra cuando es correcto
 	private static void actualizar() {
 		String nombre = Teclado.leerCadena("Dime el nombre del empleado");
 		String denominacion = Teclado.leerCadena("Dime la denominacion del departamento al que insertar el empleado");
