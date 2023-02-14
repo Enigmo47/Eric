@@ -100,8 +100,8 @@ public class AccesoFichajes {
 		EntityManager conexion = null;
 		try {
 			conexion = emf.createEntityManager();
-			TypedQuery<Empleado> consulta = conexion.createQuery(
-					"select d from Empleado e, Departamento d where e.departamento.contains(b)", Empleado.class);
+			TypedQuery<Empleado> consulta = conexion
+					.createQuery("select d from Empleado e, Departamento d where e.departamento =", Empleado.class);
 			List<Empleado> empleados = consulta.getResultList();
 			return empleados;
 		} finally {

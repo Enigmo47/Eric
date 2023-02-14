@@ -12,19 +12,19 @@ import modelo.Fichaje;
 public class CrearBDFichajes {
 
 	private static final String NOMBRE_BD_FICHAJES = "data/fichajes.odb";
-	
+
 	public static void main(String[] args) {
 		EntityManagerFactory fabricaConexiones = Persistence.createEntityManagerFactory(NOMBRE_BD_FICHAJES);
 		System.out.println("Se ha creado una base de datos fichajes:");
-		
-		Departamento departamento1 = new Departamento("Dirección");
+
+		Departamento departamento1 = new Departamento("Direcciï¿½n");
 		Departamento departamento2 = new Departamento("Recursos Humanos");
 		Departamento departamento3 = new Departamento("Contabilidad");
 		Departamento departamento4 = new Departamento("Compras");
-		Departamento departamento5 = new Departamento("Producción");
+		Departamento departamento5 = new Departamento("Producciï¿½n");
 		Departamento departamento6 = new Departamento("Marketing");
 		Departamento departamento7 = new Departamento("Ventas");
-		
+
 		EntityManager conexion = null;
 		EntityTransaction transaccion = null;
 		try {
@@ -40,8 +40,7 @@ public class CrearBDFichajes {
 			conexion.persist(departamento7);
 			transaccion.commit();
 			System.out.println("Se han insertado 7 departamentos en la base de datos.");
-		}
-		finally {
+		} finally {
 			if (transaccion != null && transaccion.isActive()) {
 				transaccion.rollback();
 			}
@@ -49,7 +48,7 @@ public class CrearBDFichajes {
 				conexion.close();
 			}
 		}
-		
+
 		Fecha fecha1 = new Fecha(16, 1, 2023);
 		Fecha fecha2 = new Fecha(17, 1, 2023);
 		Fecha fecha3 = new Fecha(18, 1, 2023);
@@ -61,7 +60,7 @@ public class CrearBDFichajes {
 		empleado01.insertar(fecha3, new Fichaje());
 		empleado01.insertar(fecha4, new Fichaje());
 		empleado01.insertar(fecha5, new Fichaje());
-		Empleado empleado02 = new Empleado("María", departamento1);
+		Empleado empleado02 = new Empleado("Marï¿½a", departamento1);
 		empleado02.insertar(fecha1, new Fichaje());
 		empleado02.insertar(fecha2, new Fichaje());
 		empleado02.insertar(fecha3, new Fichaje());
@@ -127,13 +126,13 @@ public class CrearBDFichajes {
 		empleado12.insertar(fecha3, new Fichaje());
 		empleado12.insertar(fecha4, new Fichaje());
 		empleado12.insertar(fecha5, new Fichaje());
-		Empleado empleado13 = new Empleado("Rubén", departamento6);
+		Empleado empleado13 = new Empleado("Rubï¿½n", departamento6);
 		empleado13.insertar(fecha1, new Fichaje());
 		empleado13.insertar(fecha2, new Fichaje());
 		empleado13.insertar(fecha3, new Fichaje());
 		empleado13.insertar(fecha4, new Fichaje());
 		empleado13.insertar(fecha5, new Fichaje());
-		Empleado empleado14 = new Empleado("Lucía", departamento7);
+		Empleado empleado14 = new Empleado("Lucï¿½a", departamento7);
 		empleado14.insertar(fecha1, new Fichaje());
 		empleado14.insertar(fecha2, new Fichaje());
 		empleado14.insertar(fecha3, new Fichaje());
@@ -151,7 +150,7 @@ public class CrearBDFichajes {
 		empleado16.insertar(fecha3, new Fichaje());
 		empleado16.insertar(fecha4, new Fichaje());
 		empleado16.insertar(fecha5, new Fichaje());
-				
+
 		conexion = null;
 		transaccion = null;
 		try {
@@ -176,8 +175,7 @@ public class CrearBDFichajes {
 			conexion.persist(empleado16);
 			transaccion.commit();
 			System.out.println("Se han insertado 16 empleados en la base de datos.");
-		}
-		finally {
+		} finally {
 			if (transaccion != null && transaccion.isActive()) {
 				transaccion.rollback();
 			}
@@ -185,7 +183,7 @@ public class CrearBDFichajes {
 				conexion.close();
 			}
 		}
-		
+
 		fabricaConexiones.close();
 	}
 
