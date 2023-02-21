@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color : rgb(190, 255, 201)</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame">
     <property name="geometry">
@@ -36,12 +39,23 @@
         </brush>
        </colorrole>
        <colorrole role="Button">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>85</red>
-          <green>255</green>
-          <blue>127</blue>
-         </color>
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.704545000000000" endy="0.806000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.193182000000000">
+           <color alpha="255">
+            <red>7</red>
+            <green>183</green>
+            <blue>119</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="0.715909000000000">
+           <color alpha="255">
+            <red>114</red>
+            <green>255</green>
+            <blue>119</blue>
+           </color>
+          </gradientstop>
+         </gradient>
         </brush>
        </colorrole>
        <colorrole role="Light">
@@ -108,21 +122,43 @@
         </brush>
        </colorrole>
        <colorrole role="Base">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
-         </color>
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.704545000000000" endy="0.806000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.193182000000000">
+           <color alpha="255">
+            <red>7</red>
+            <green>183</green>
+            <blue>119</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="0.715909000000000">
+           <color alpha="255">
+            <red>114</red>
+            <green>255</green>
+            <blue>119</blue>
+           </color>
+          </gradientstop>
+         </gradient>
         </brush>
        </colorrole>
        <colorrole role="Window">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>85</red>
-          <green>255</green>
-          <blue>127</blue>
-         </color>
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.704545000000000" endy="0.806000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.193182000000000">
+           <color alpha="255">
+            <red>7</red>
+            <green>183</green>
+            <blue>119</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="0.715909000000000">
+           <color alpha="255">
+            <red>114</red>
+            <green>255</green>
+            <blue>119</blue>
+           </color>
+          </gradientstop>
+         </gradient>
         </brush>
        </colorrole>
        <colorrole role="Shadow">
@@ -182,12 +218,23 @@
         </brush>
        </colorrole>
        <colorrole role="Button">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>240</red>
-          <green>240</green>
-          <blue>240</blue>
-         </color>
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.704545000000000" endy="0.806000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.193182000000000">
+           <color alpha="255">
+            <red>7</red>
+            <green>183</green>
+            <blue>119</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="0.715909000000000">
+           <color alpha="255">
+            <red>114</red>
+            <green>255</green>
+            <blue>119</blue>
+           </color>
+          </gradientstop>
+         </gradient>
         </brush>
        </colorrole>
        <colorrole role="Light">
@@ -254,21 +301,43 @@
         </brush>
        </colorrole>
        <colorrole role="Base">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>255</red>
-          <green>255</green>
-          <blue>255</blue>
-         </color>
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.704545000000000" endy="0.806000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.193182000000000">
+           <color alpha="255">
+            <red>7</red>
+            <green>183</green>
+            <blue>119</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="0.715909000000000">
+           <color alpha="255">
+            <red>114</red>
+            <green>255</green>
+            <blue>119</blue>
+           </color>
+          </gradientstop>
+         </gradient>
         </brush>
        </colorrole>
        <colorrole role="Window">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>240</red>
-          <green>240</green>
-          <blue>240</blue>
-         </color>
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.704545000000000" endy="0.806000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.193182000000000">
+           <color alpha="255">
+            <red>7</red>
+            <green>183</green>
+            <blue>119</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="0.715909000000000">
+           <color alpha="255">
+            <red>114</red>
+            <green>255</green>
+            <blue>119</blue>
+           </color>
+          </gradientstop>
+         </gradient>
         </brush>
        </colorrole>
        <colorrole role="Shadow">
@@ -328,12 +397,23 @@
         </brush>
        </colorrole>
        <colorrole role="Button">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>85</red>
-          <green>255</green>
-          <blue>127</blue>
-         </color>
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.704545000000000" endy="0.806000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.193182000000000">
+           <color alpha="255">
+            <red>7</red>
+            <green>183</green>
+            <blue>119</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="0.715909000000000">
+           <color alpha="255">
+            <red>114</red>
+            <green>255</green>
+            <blue>119</blue>
+           </color>
+          </gradientstop>
+         </gradient>
         </brush>
        </colorrole>
        <colorrole role="Light">
@@ -400,21 +480,43 @@
         </brush>
        </colorrole>
        <colorrole role="Base">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>85</red>
-          <green>255</green>
-          <blue>127</blue>
-         </color>
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.704545000000000" endy="0.806000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.193182000000000">
+           <color alpha="255">
+            <red>7</red>
+            <green>183</green>
+            <blue>119</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="0.715909000000000">
+           <color alpha="255">
+            <red>114</red>
+            <green>255</green>
+            <blue>119</blue>
+           </color>
+          </gradientstop>
+         </gradient>
         </brush>
        </colorrole>
        <colorrole role="Window">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>85</red>
-          <green>255</green>
-          <blue>127</blue>
-         </color>
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.704545000000000" endy="0.806000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.193182000000000">
+           <color alpha="255">
+            <red>7</red>
+            <green>183</green>
+            <blue>119</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="0.715909000000000">
+           <color alpha="255">
+            <red>114</red>
+            <green>255</green>
+            <blue>119</blue>
+           </color>
+          </gradientstop>
+         </gradient>
         </brush>
        </colorrole>
        <colorrole role="Shadow">
@@ -468,6 +570,13 @@
     <property name="cursor">
      <cursorShape>ArrowCursor</cursorShape>
     </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius : 13px;
+border: 2px solid black;
+background-color :qlineargradient(spread:pad, x1:0, y1:0, x2:0.704545, y2:0.806, stop:0.193182 rgba(7, 183, 119, 255), stop:0.715909 rgba(114, 255, 119, 255))
+
+</string>
+    </property>
     <property name="frameShape">
      <enum>QFrame::WinPanel</enum>
     </property>
@@ -504,8 +613,9 @@
      <property name="styleSheet">
       <string notr="true">border-radius : 7px;
 border: 1px solid black;
-background-color : white;
-selection-background-color: rgb(85, 255, 255);</string>
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 160), stop:1 rgba(248, 248, 248, 169));
+selection-background-color: rgb(85, 255, 255);
+font: 70 20pt &quot;Goudy Old Style&quot;;</string>
      </property>
      <property name="text">
       <string>Norte</string>
@@ -544,10 +654,14 @@ selection-background-color: rgb(85, 255, 255);</string>
      <property name="styleSheet">
       <string notr="true">border-radius : 7px;
 border: 1px solid black;
-background-color : white;</string>
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 160), stop:1 rgba(248, 248, 248, 169));
+selection-background-color: rgb(85, 255, 255);
+font: 70 20pt &quot;Goudy Old Style&quot;;
+</string>
      </property>
      <property name="text">
-      <string>Centro</string>
+      <string>Sala 
+Central</string>
      </property>
      <property name="default">
       <bool>false</bool>
@@ -580,7 +694,9 @@ background-color : white;</string>
      <property name="styleSheet">
       <string notr="true">border-radius : 7px;
 border: 1px solid black;
-background-color : white;</string>
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 160), stop:1 rgba(248, 248, 248, 169));
+selection-background-color: rgb(85, 255, 255);
+font: 70 20pt &quot;Goudy Old Style&quot;;</string>
      </property>
      <property name="text">
       <string>Sur</string>
@@ -616,7 +732,9 @@ background-color : white;</string>
      <property name="styleSheet">
       <string notr="true">border-radius : 7px;
 border: 1px solid black;
-background-color : white;</string>
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 160), stop:1 rgba(248, 248, 248, 169));
+selection-background-color: rgb(85, 255, 255);
+font: 70 20pt &quot;Goudy Old Style&quot;;</string>
      </property>
      <property name="text">
       <string>Este</string>
@@ -652,7 +770,10 @@ background-color : white;</string>
      <property name="styleSheet">
       <string notr="true">border-radius : 7px;
 border: 1px solid black;
-background-color : white;</string>
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 160), stop:1 rgba(248, 248, 248, 169));
+selection-background-color: rgb(85, 255, 255);
+font: 70 20pt &quot;Goudy Old Style&quot;;
+</string>
      </property>
      <property name="text">
       <string>Oeste</string>
@@ -675,7 +796,12 @@ background-color : white;</string>
      </rect>
     </property>
     <property name="cursor">
-     <cursorShape>ArrowCursor</cursorShape>
+     <cursorShape>OpenHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius : 13px;
+border: 2px solid black;
+background-color :qlineargradient(spread:pad, x1:0, y1:0, x2:0.704545, y2:0.806, stop:0.193182 rgba(7, 183, 119, 255), stop:0.715909 rgba(114, 255, 119, 255))</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::WinPanel</enum>
@@ -684,29 +810,16 @@ background-color : white;</string>
      <enum>QFrame::Plain</enum>
     </property>
     <property name="lineWidth">
-     <number>2</number>
+     <number>-2</number>
     </property>
     <property name="midLineWidth">
      <number>1</number>
     </property>
-    <widget class="QRadioButton" name="r1">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>120</y>
-       <width>101</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>h</string>
-     </property>
-    </widget>
     <widget class="QPushButton" name="afirmativo">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>380</y>
+       <x>40</x>
+       <y>370</y>
        <width>91</width>
        <height>61</height>
       </rect>
@@ -714,7 +827,8 @@ background-color : white;</string>
      <property name="styleSheet">
       <string notr="true">border-radius : 7px;
 border: 1px solid black;
-background-color : white;</string>
+background-color : rgb(172, 255, 178);
+font: 70 20pt &quot;Goudy Old Style&quot;;</string>
      </property>
      <property name="text">
       <string>Jugar</string>
@@ -723,8 +837,8 @@ background-color : white;</string>
     <widget class="QPushButton" name="negativo">
      <property name="geometry">
       <rect>
-       <x>240</x>
-       <y>380</y>
+       <x>40</x>
+       <y>450</y>
        <width>91</width>
        <height>61</height>
       </rect>
@@ -732,49 +846,11 @@ background-color : white;</string>
      <property name="styleSheet">
       <string notr="true">border-radius : 7px;
 border: 1px solid black;
-background-color : white;</string>
+background-color : rgb(255, 255, 148);
+font: 70 20pt &quot;Goudy Old Style&quot;;</string>
      </property>
      <property name="text">
       <string>Salir</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="r2">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>180</y>
-       <width>101</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>o</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="r4">
-     <property name="geometry">
-      <rect>
-       <x>230</x>
-       <y>180</y>
-       <width>101</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>a</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="r3">
-     <property name="geometry">
-      <rect>
-       <x>230</x>
-       <y>120</y>
-       <width>101</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>l</string>
      </property>
     </widget>
     <widget class="QLabel" name="descripcion">
@@ -783,11 +859,18 @@ background-color : white;</string>
        <x>20</x>
        <y>20</y>
        <width>351</width>
-       <height>101</height>
+       <height>201</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 700 12pt &quot;Goudy Old Style&quot;;
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 160), stop:1 rgba(248, 248, 248, 169))</string>
      </property>
      <property name="text">
       <string>Descripcion</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QLabel" name="resultado">
@@ -799,18 +882,31 @@ background-color : white;</string>
        <height>101</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">font: 700 12pt &quot;Goudy Old Style&quot;;
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 160), stop:1 rgba(248, 248, 248, 169))</string>
+     </property>
      <property name="text">
       <string>Resultado</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QPushButton" name="estesi">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>460</y>
-       <width>75</width>
-       <height>24</height>
+       <x>260</x>
+       <y>480</y>
+       <width>91</width>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius : 7px;
+border: 1px solid black;
+background-color : rgb(172, 255, 178);
+font: 70 12pt &quot;Goudy Old Style&quot;;</string>
      </property>
      <property name="text">
       <string>PushButton</string>
@@ -819,11 +915,17 @@ background-color : white;</string>
     <widget class="QPushButton" name="esteno">
      <property name="geometry">
       <rect>
-       <x>250</x>
-       <y>460</y>
-       <width>75</width>
-       <height>24</height>
+       <x>260</x>
+       <y>440</y>
+       <width>91</width>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius : 7px;
+border: 1px solid black;
+background-color : rgb(172, 255, 178);
+font: 70 12pt &quot;Goudy Old Style&quot;;</string>
      </property>
      <property name="text">
       <string>PushButton</string>
@@ -832,11 +934,17 @@ background-color : white;</string>
     <widget class="QPushButton" name="oestesi">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>490</y>
-       <width>75</width>
-       <height>24</height>
+       <x>260</x>
+       <y>360</y>
+       <width>91</width>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius : 7px;
+border: 1px solid black;
+background-color : rgb(172, 255, 178);
+font: 70 12pt &quot;Goudy Old Style&quot;;</string>
      </property>
      <property name="text">
       <string>PushButton</string>
@@ -845,11 +953,17 @@ background-color : white;</string>
     <widget class="QPushButton" name="oesteno">
      <property name="geometry">
       <rect>
-       <x>250</x>
-       <y>490</y>
-       <width>75</width>
-       <height>24</height>
+       <x>260</x>
+       <y>400</y>
+       <width>91</width>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius : 7px;
+border: 1px solid black;
+background-color : rgb(172, 255, 178);
+font: 70 12pt &quot;Goudy Old Style&quot;;</string>
      </property>
      <property name="text">
       <string>PushButton</string>
@@ -858,6 +972,9 @@ background-color : white;</string>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>0</x>

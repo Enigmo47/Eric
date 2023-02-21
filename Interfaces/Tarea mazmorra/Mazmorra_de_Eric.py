@@ -13,6 +13,7 @@ class Ui_Mazmorra_de_Eric(object):
     def setupUi(self, Mazmorra_de_Eric):
         Mazmorra_de_Eric.setObjectName("Mazmorra_de_Eric")
         Mazmorra_de_Eric.resize(811, 612)
+        Mazmorra_de_Eric.setStyleSheet("background-color : rgb(190, 255, 201)")
         self.centralwidget = QtWidgets.QWidget(Mazmorra_de_Eric)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
@@ -21,8 +22,12 @@ class Ui_Mazmorra_de_Eric(object):
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.BrushStyle.SolidPattern)
         palette.setBrush(QtGui.QPalette.ColorGroup.Active, QtGui.QPalette.ColorRole.WindowText, brush)
-        brush = QtGui.QBrush(QtGui.QColor(85, 255, 127))
-        brush.setStyle(QtCore.Qt.BrushStyle.SolidPattern)
+        gradient = QtGui.QLinearGradient(0.0, 0.0, 0.704545, 0.806)
+        gradient.setSpread(QtGui.QGradient.Spread.PadSpread)
+        gradient.setCoordinateMode(QtGui.QGradient.CoordinateMode.ObjectBoundingMode)
+        gradient.setColorAt(0.193182, QtGui.QColor(7, 183, 119))
+        gradient.setColorAt(0.715909, QtGui.QColor(114, 255, 119))
+        brush = QtGui.QBrush(gradient)
         palette.setBrush(QtGui.QPalette.ColorGroup.Active, QtGui.QPalette.ColorRole.Button, brush)
         brush = QtGui.QBrush(QtGui.QColor(212, 255, 223))
         brush.setStyle(QtCore.Qt.BrushStyle.SolidPattern)
@@ -45,11 +50,19 @@ class Ui_Mazmorra_de_Eric(object):
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.BrushStyle.SolidPattern)
         palette.setBrush(QtGui.QPalette.ColorGroup.Active, QtGui.QPalette.ColorRole.ButtonText, brush)
-        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
-        brush.setStyle(QtCore.Qt.BrushStyle.SolidPattern)
+        gradient = QtGui.QLinearGradient(0.0, 0.0, 0.704545, 0.806)
+        gradient.setSpread(QtGui.QGradient.Spread.PadSpread)
+        gradient.setCoordinateMode(QtGui.QGradient.CoordinateMode.ObjectBoundingMode)
+        gradient.setColorAt(0.193182, QtGui.QColor(7, 183, 119))
+        gradient.setColorAt(0.715909, QtGui.QColor(114, 255, 119))
+        brush = QtGui.QBrush(gradient)
         palette.setBrush(QtGui.QPalette.ColorGroup.Active, QtGui.QPalette.ColorRole.Base, brush)
-        brush = QtGui.QBrush(QtGui.QColor(85, 255, 127))
-        brush.setStyle(QtCore.Qt.BrushStyle.SolidPattern)
+        gradient = QtGui.QLinearGradient(0.0, 0.0, 0.704545, 0.806)
+        gradient.setSpread(QtGui.QGradient.Spread.PadSpread)
+        gradient.setCoordinateMode(QtGui.QGradient.CoordinateMode.ObjectBoundingMode)
+        gradient.setColorAt(0.193182, QtGui.QColor(7, 183, 119))
+        gradient.setColorAt(0.715909, QtGui.QColor(114, 255, 119))
+        brush = QtGui.QBrush(gradient)
         palette.setBrush(QtGui.QPalette.ColorGroup.Active, QtGui.QPalette.ColorRole.Window, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.BrushStyle.SolidPattern)
@@ -69,8 +82,12 @@ class Ui_Mazmorra_de_Eric(object):
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.BrushStyle.SolidPattern)
         palette.setBrush(QtGui.QPalette.ColorGroup.Inactive, QtGui.QPalette.ColorRole.WindowText, brush)
-        brush = QtGui.QBrush(QtGui.QColor(240, 240, 240))
-        brush.setStyle(QtCore.Qt.BrushStyle.SolidPattern)
+        gradient = QtGui.QLinearGradient(0.0, 0.0, 0.704545, 0.806)
+        gradient.setSpread(QtGui.QGradient.Spread.PadSpread)
+        gradient.setCoordinateMode(QtGui.QGradient.CoordinateMode.ObjectBoundingMode)
+        gradient.setColorAt(0.193182, QtGui.QColor(7, 183, 119))
+        gradient.setColorAt(0.715909, QtGui.QColor(114, 255, 119))
+        brush = QtGui.QBrush(gradient)
         palette.setBrush(QtGui.QPalette.ColorGroup.Inactive, QtGui.QPalette.ColorRole.Button, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.BrushStyle.SolidPattern)
@@ -93,11 +110,19 @@ class Ui_Mazmorra_de_Eric(object):
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.BrushStyle.SolidPattern)
         palette.setBrush(QtGui.QPalette.ColorGroup.Inactive, QtGui.QPalette.ColorRole.ButtonText, brush)
-        brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
-        brush.setStyle(QtCore.Qt.BrushStyle.SolidPattern)
+        gradient = QtGui.QLinearGradient(0.0, 0.0, 0.704545, 0.806)
+        gradient.setSpread(QtGui.QGradient.Spread.PadSpread)
+        gradient.setCoordinateMode(QtGui.QGradient.CoordinateMode.ObjectBoundingMode)
+        gradient.setColorAt(0.193182, QtGui.QColor(7, 183, 119))
+        gradient.setColorAt(0.715909, QtGui.QColor(114, 255, 119))
+        brush = QtGui.QBrush(gradient)
         palette.setBrush(QtGui.QPalette.ColorGroup.Inactive, QtGui.QPalette.ColorRole.Base, brush)
-        brush = QtGui.QBrush(QtGui.QColor(240, 240, 240))
-        brush.setStyle(QtCore.Qt.BrushStyle.SolidPattern)
+        gradient = QtGui.QLinearGradient(0.0, 0.0, 0.704545, 0.806)
+        gradient.setSpread(QtGui.QGradient.Spread.PadSpread)
+        gradient.setCoordinateMode(QtGui.QGradient.CoordinateMode.ObjectBoundingMode)
+        gradient.setColorAt(0.193182, QtGui.QColor(7, 183, 119))
+        gradient.setColorAt(0.715909, QtGui.QColor(114, 255, 119))
+        brush = QtGui.QBrush(gradient)
         palette.setBrush(QtGui.QPalette.ColorGroup.Inactive, QtGui.QPalette.ColorRole.Window, brush)
         brush = QtGui.QBrush(QtGui.QColor(105, 105, 105))
         brush.setStyle(QtCore.Qt.BrushStyle.SolidPattern)
@@ -117,8 +142,12 @@ class Ui_Mazmorra_de_Eric(object):
         brush = QtGui.QBrush(QtGui.QColor(42, 127, 63))
         brush.setStyle(QtCore.Qt.BrushStyle.SolidPattern)
         palette.setBrush(QtGui.QPalette.ColorGroup.Disabled, QtGui.QPalette.ColorRole.WindowText, brush)
-        brush = QtGui.QBrush(QtGui.QColor(85, 255, 127))
-        brush.setStyle(QtCore.Qt.BrushStyle.SolidPattern)
+        gradient = QtGui.QLinearGradient(0.0, 0.0, 0.704545, 0.806)
+        gradient.setSpread(QtGui.QGradient.Spread.PadSpread)
+        gradient.setCoordinateMode(QtGui.QGradient.CoordinateMode.ObjectBoundingMode)
+        gradient.setColorAt(0.193182, QtGui.QColor(7, 183, 119))
+        gradient.setColorAt(0.715909, QtGui.QColor(114, 255, 119))
+        brush = QtGui.QBrush(gradient)
         palette.setBrush(QtGui.QPalette.ColorGroup.Disabled, QtGui.QPalette.ColorRole.Button, brush)
         brush = QtGui.QBrush(QtGui.QColor(212, 255, 223))
         brush.setStyle(QtCore.Qt.BrushStyle.SolidPattern)
@@ -141,11 +170,19 @@ class Ui_Mazmorra_de_Eric(object):
         brush = QtGui.QBrush(QtGui.QColor(42, 127, 63))
         brush.setStyle(QtCore.Qt.BrushStyle.SolidPattern)
         palette.setBrush(QtGui.QPalette.ColorGroup.Disabled, QtGui.QPalette.ColorRole.ButtonText, brush)
-        brush = QtGui.QBrush(QtGui.QColor(85, 255, 127))
-        brush.setStyle(QtCore.Qt.BrushStyle.SolidPattern)
+        gradient = QtGui.QLinearGradient(0.0, 0.0, 0.704545, 0.806)
+        gradient.setSpread(QtGui.QGradient.Spread.PadSpread)
+        gradient.setCoordinateMode(QtGui.QGradient.CoordinateMode.ObjectBoundingMode)
+        gradient.setColorAt(0.193182, QtGui.QColor(7, 183, 119))
+        gradient.setColorAt(0.715909, QtGui.QColor(114, 255, 119))
+        brush = QtGui.QBrush(gradient)
         palette.setBrush(QtGui.QPalette.ColorGroup.Disabled, QtGui.QPalette.ColorRole.Base, brush)
-        brush = QtGui.QBrush(QtGui.QColor(85, 255, 127))
-        brush.setStyle(QtCore.Qt.BrushStyle.SolidPattern)
+        gradient = QtGui.QLinearGradient(0.0, 0.0, 0.704545, 0.806)
+        gradient.setSpread(QtGui.QGradient.Spread.PadSpread)
+        gradient.setCoordinateMode(QtGui.QGradient.CoordinateMode.ObjectBoundingMode)
+        gradient.setColorAt(0.193182, QtGui.QColor(7, 183, 119))
+        gradient.setColorAt(0.715909, QtGui.QColor(114, 255, 119))
+        brush = QtGui.QBrush(gradient)
         palette.setBrush(QtGui.QPalette.ColorGroup.Disabled, QtGui.QPalette.ColorRole.Window, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.BrushStyle.SolidPattern)
@@ -164,6 +201,11 @@ class Ui_Mazmorra_de_Eric(object):
         palette.setBrush(QtGui.QPalette.ColorGroup.Disabled, QtGui.QPalette.ColorRole.PlaceholderText, brush)
         self.frame.setPalette(palette)
         self.frame.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.frame.setStyleSheet("border-radius : 13px;\n"
+"border: 2px solid black;\n"
+"background-color :qlineargradient(spread:pad, x1:0, y1:0, x2:0.704545, y2:0.806, stop:0.193182 rgba(7, 183, 119, 255), stop:0.715909 rgba(114, 255, 119, 255))\n"
+"\n"
+"")
         self.frame.setFrameShape(QtWidgets.QFrame.Shape.WinPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Shadow.Plain)
         self.frame.setLineWidth(2)
@@ -176,8 +218,9 @@ class Ui_Mazmorra_de_Eric(object):
         self.norte.setMouseTracking(False)
         self.norte.setStyleSheet("border-radius : 7px;\n"
 "border: 1px solid black;\n"
-"background-color : white;\n"
-"selection-background-color: rgb(85, 255, 255);")
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 160), stop:1 rgba(248, 248, 248, 169));\n"
+"selection-background-color: rgb(85, 255, 255);\n"
+"font: 70 20pt \"Goudy Old Style\";")
         self.norte.setDefault(False)
         self.norte.setFlat(False)
         self.norte.setObjectName("norte")
@@ -188,7 +231,10 @@ class Ui_Mazmorra_de_Eric(object):
         self.centro.setMouseTracking(False)
         self.centro.setStyleSheet("border-radius : 7px;\n"
 "border: 1px solid black;\n"
-"background-color : white;")
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 160), stop:1 rgba(248, 248, 248, 169));\n"
+"selection-background-color: rgb(85, 255, 255);\n"
+"font: 70 20pt \"Goudy Old Style\";\n"
+"")
         self.centro.setDefault(False)
         self.centro.setFlat(False)
         self.centro.setObjectName("centro")
@@ -199,7 +245,9 @@ class Ui_Mazmorra_de_Eric(object):
         self.sur.setMouseTracking(False)
         self.sur.setStyleSheet("border-radius : 7px;\n"
 "border: 1px solid black;\n"
-"background-color : white;")
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 160), stop:1 rgba(248, 248, 248, 169));\n"
+"selection-background-color: rgb(85, 255, 255);\n"
+"font: 70 20pt \"Goudy Old Style\";")
         self.sur.setDefault(False)
         self.sur.setFlat(False)
         self.sur.setObjectName("sur")
@@ -210,7 +258,9 @@ class Ui_Mazmorra_de_Eric(object):
         self.este.setMouseTracking(False)
         self.este.setStyleSheet("border-radius : 7px;\n"
 "border: 1px solid black;\n"
-"background-color : white;")
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 160), stop:1 rgba(248, 248, 248, 169));\n"
+"selection-background-color: rgb(85, 255, 255);\n"
+"font: 70 20pt \"Goudy Old Style\";")
         self.este.setDefault(False)
         self.este.setFlat(False)
         self.este.setObjectName("este")
@@ -221,62 +271,81 @@ class Ui_Mazmorra_de_Eric(object):
         self.oeste.setMouseTracking(False)
         self.oeste.setStyleSheet("border-radius : 7px;\n"
 "border: 1px solid black;\n"
-"background-color : white;")
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 160), stop:1 rgba(248, 248, 248, 169));\n"
+"selection-background-color: rgb(85, 255, 255);\n"
+"font: 70 20pt \"Goudy Old Style\";\n"
+"")
         self.oeste.setDefault(False)
         self.oeste.setFlat(False)
         self.oeste.setObjectName("oeste")
         self.frame_2 = QtWidgets.QFrame(self.centralwidget)
         self.frame_2.setGeometry(QtCore.QRect(410, 10, 391, 541))
-        self.frame_2.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.frame_2.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.OpenHandCursor))
+        self.frame_2.setStyleSheet("border-radius : 13px;\n"
+"border: 2px solid black;\n"
+"background-color :qlineargradient(spread:pad, x1:0, y1:0, x2:0.704545, y2:0.806, stop:0.193182 rgba(7, 183, 119, 255), stop:0.715909 rgba(114, 255, 119, 255))")
         self.frame_2.setFrameShape(QtWidgets.QFrame.Shape.WinPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Shadow.Plain)
-        self.frame_2.setLineWidth(2)
+        self.frame_2.setLineWidth(-2)
         self.frame_2.setMidLineWidth(1)
         self.frame_2.setObjectName("frame_2")
-        self.r1 = QtWidgets.QRadioButton(self.frame_2)
-        self.r1.setGeometry(QtCore.QRect(40, 120, 101, 61))
-        self.r1.setObjectName("r1")
         self.afirmativo = QtWidgets.QPushButton(self.frame_2)
-        self.afirmativo.setGeometry(QtCore.QRect(50, 380, 91, 61))
+        self.afirmativo.setGeometry(QtCore.QRect(40, 370, 91, 61))
         self.afirmativo.setStyleSheet("border-radius : 7px;\n"
 "border: 1px solid black;\n"
-"background-color : white;")
+"background-color : rgb(172, 255, 178);\n"
+"font: 70 20pt \"Goudy Old Style\";")
         self.afirmativo.setObjectName("afirmativo")
         self.negativo = QtWidgets.QPushButton(self.frame_2)
-        self.negativo.setGeometry(QtCore.QRect(240, 380, 91, 61))
+        self.negativo.setGeometry(QtCore.QRect(40, 450, 91, 61))
         self.negativo.setStyleSheet("border-radius : 7px;\n"
 "border: 1px solid black;\n"
-"background-color : white;")
+"background-color : rgb(255, 255, 148);\n"
+"font: 70 20pt \"Goudy Old Style\";")
         self.negativo.setObjectName("negativo")
-        self.r2 = QtWidgets.QRadioButton(self.frame_2)
-        self.r2.setGeometry(QtCore.QRect(40, 180, 101, 61))
-        self.r2.setObjectName("r2")
-        self.r4 = QtWidgets.QRadioButton(self.frame_2)
-        self.r4.setGeometry(QtCore.QRect(230, 180, 101, 61))
-        self.r4.setObjectName("r4")
-        self.r3 = QtWidgets.QRadioButton(self.frame_2)
-        self.r3.setGeometry(QtCore.QRect(230, 120, 101, 61))
-        self.r3.setObjectName("r3")
         self.descripcion = QtWidgets.QLabel(self.frame_2)
-        self.descripcion.setGeometry(QtCore.QRect(20, 20, 351, 101))
+        self.descripcion.setGeometry(QtCore.QRect(20, 20, 351, 201))
+        self.descripcion.setStyleSheet("font: 700 12pt \"Goudy Old Style\";\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 160), stop:1 rgba(248, 248, 248, 169))")
+        self.descripcion.setWordWrap(True)
         self.descripcion.setObjectName("descripcion")
         self.resultado = QtWidgets.QLabel(self.frame_2)
         self.resultado.setGeometry(QtCore.QRect(20, 230, 351, 101))
+        self.resultado.setStyleSheet("font: 700 12pt \"Goudy Old Style\";\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 255, 255, 160), stop:1 rgba(248, 248, 248, 169))")
+        self.resultado.setWordWrap(True)
         self.resultado.setObjectName("resultado")
         self.estesi = QtWidgets.QPushButton(self.frame_2)
-        self.estesi.setGeometry(QtCore.QRect(50, 460, 75, 24))
+        self.estesi.setGeometry(QtCore.QRect(260, 480, 91, 31))
+        self.estesi.setStyleSheet("border-radius : 7px;\n"
+"border: 1px solid black;\n"
+"background-color : rgb(172, 255, 178);\n"
+"font: 70 12pt \"Goudy Old Style\";")
         self.estesi.setObjectName("estesi")
         self.esteno = QtWidgets.QPushButton(self.frame_2)
-        self.esteno.setGeometry(QtCore.QRect(250, 460, 75, 24))
+        self.esteno.setGeometry(QtCore.QRect(260, 440, 91, 31))
+        self.esteno.setStyleSheet("border-radius : 7px;\n"
+"border: 1px solid black;\n"
+"background-color : rgb(172, 255, 178);\n"
+"font: 70 12pt \"Goudy Old Style\";")
         self.esteno.setObjectName("esteno")
         self.oestesi = QtWidgets.QPushButton(self.frame_2)
-        self.oestesi.setGeometry(QtCore.QRect(50, 490, 75, 24))
+        self.oestesi.setGeometry(QtCore.QRect(260, 360, 91, 31))
+        self.oestesi.setStyleSheet("border-radius : 7px;\n"
+"border: 1px solid black;\n"
+"background-color : rgb(172, 255, 178);\n"
+"font: 70 12pt \"Goudy Old Style\";")
         self.oestesi.setObjectName("oestesi")
         self.oesteno = QtWidgets.QPushButton(self.frame_2)
-        self.oesteno.setGeometry(QtCore.QRect(250, 490, 75, 24))
+        self.oesteno.setGeometry(QtCore.QRect(260, 400, 91, 31))
+        self.oesteno.setStyleSheet("border-radius : 7px;\n"
+"border: 1px solid black;\n"
+"background-color : rgb(172, 255, 178);\n"
+"font: 70 12pt \"Goudy Old Style\";")
         self.oesteno.setObjectName("oesteno")
         Mazmorra_de_Eric.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(Mazmorra_de_Eric)
+        self.menubar.setEnabled(True)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 811, 22))
         self.menubar.setObjectName("menubar")
         self.menuMenu = QtWidgets.QMenu(self.menubar)
@@ -309,16 +378,13 @@ class Ui_Mazmorra_de_Eric(object):
         Mazmorra_de_Eric.setWindowTitle(_translate("Mazmorra_de_Eric", "MainWindow"))
         self.norte.setText(_translate("Mazmorra_de_Eric", "Norte"))
         self.centro.setWhatsThis(_translate("Mazmorra_de_Eric", "<html><head/><body><p>cuadro de la sala central</p></body></html>"))
-        self.centro.setText(_translate("Mazmorra_de_Eric", "Centro"))
+        self.centro.setText(_translate("Mazmorra_de_Eric", "Sala \n"
+"Central"))
         self.sur.setText(_translate("Mazmorra_de_Eric", "Sur"))
         self.este.setText(_translate("Mazmorra_de_Eric", "Este"))
         self.oeste.setText(_translate("Mazmorra_de_Eric", "Oeste"))
-        self.r1.setText(_translate("Mazmorra_de_Eric", "h"))
         self.afirmativo.setText(_translate("Mazmorra_de_Eric", "Jugar"))
         self.negativo.setText(_translate("Mazmorra_de_Eric", "Salir"))
-        self.r2.setText(_translate("Mazmorra_de_Eric", "o"))
-        self.r4.setText(_translate("Mazmorra_de_Eric", "a"))
-        self.r3.setText(_translate("Mazmorra_de_Eric", "l"))
         self.descripcion.setText(_translate("Mazmorra_de_Eric", "Descripcion"))
         self.resultado.setText(_translate("Mazmorra_de_Eric", "Resultado"))
         self.estesi.setText(_translate("Mazmorra_de_Eric", "PushButton"))
