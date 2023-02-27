@@ -79,7 +79,7 @@ Mucha suerte
     def salaCentro(self):
         self.popup= QMessageBox()
         self.popup.setWindowTitle("fin")
-        self.popup.setText("""El aventurero regresó exhausto tras las 4 salas y se sentó a descansar junto a una fogata
+        self.popup.setText("""El aventurero, exhausto tras completar las cuatro pruebas y obtener las 4 llaves, pudo adentrarse en la sala central, que en realidad era la salida de ese infierno...
     """)
         self.popup.exec()
 
@@ -113,7 +113,7 @@ Mucha suerte
     def ataque(self):
         atk = random.randint(0, 100)
         if (atk >= 60):
-            self.ui.resultado.setText("El aventurero acabó con el monstruo\n y volvió a la sala inicial a la espera de su siguiente reto...")
+            self.ui.resultado.setText("El aventurero acabó con el monstruo\n Consiguió la llave de la sala \n y volvió a la sala inicial a la espera de su siguiente reto...")
             self.ui.norte.setEnabled(False)
             self.ui.sur.setEnabled(True)
             self.ui.este.setEnabled(True)
@@ -135,10 +135,14 @@ Mucha suerte
 
     def huir(self):
         self.ui.resultado.setText("El aventurero, asustado ante tal peligro decidió\nvolver a la sala central para afrontar otro desafio antes de volver")
+        self.ui.norte.setEnabled(True)
+        self.ui.sur.setEnabled(True)
+        self.ui.este.setEnabled(True)
+        self.ui.oeste.setEnabled(True)
         self.limpiar()
 
     def verdadero(self):
-        self.ui.resultado.setText("El sabio quedó atónito ante la respuesta correcta del aventutrero y le permitio volver victorioso a la sala central")
+        self.ui.resultado.setText("El sabio quedó atónito ante la respuesta correcta del aventutrero y le permitio volver victorioso a la sala central\n Aunque no se fue sin antes conseguir la llave de la sala")
         self.contador = self.contador + 1
         self.win()
         self.limpiar()
@@ -153,6 +157,14 @@ Mucha suerte
 
 
     def salaNorte(self):
+        self.ui.estesi.setVisible(False)  
+        self.ui.esteno.setVisible(False) 
+        self.ui.estesi.setEnabled(False)
+        self.ui.esteno.setEnabled(False)     
+        self.ui.oestesi.setVisible(False)  
+        self.ui.oesteno.setVisible(False) 
+        self.ui.oestesi.setEnabled(False)
+        self.ui.oesteno.setEnabled(False) 
         self.ui.afirmativo.setEnabled(True)
         self.ui.negativo.setEnabled(True)
         self.ui.afirmativo.setVisible(True)
@@ -169,13 +181,12 @@ Mucha suerte
             self.ui.afirmativo.setText("")
             self.ui.negativo.setText("")
             self.ui.norte.setStyleSheet("background-color: rgb(229, 30, 30)\n")
+            self.limpiar()
             self.gameover()
             self.ui.afirmativo.setEnabled(False)
             self.ui.negativo.setEnabled(False)
             self.ui.afirmativo.setVisible(False)
             self.ui.negativo.setVisible(False)
-            self.limpiar()
-
                 
         else:
             self.ui.descripcion.setText(" El aventurero sobrevivió, contraatacará? Y/N")
@@ -198,15 +209,22 @@ Mucha suerte
 
 
     def salaSur(self):
-
-        self.ui.descripcion.setText("El aventurero se adentró en la sala sur, donde hayó un gran \ncofre de madera en el centro de la sala, al entrar se cerró de golpe la puerta de la sala , a si que asumió que no quedó otra alternativa más que abrirlo, para ello hay que tener suerte y que tras darle a un botón el numero que aparezca sea mayor que 63, ¿El aventurero logrará abrirlo?")
+        self.ui.estesi.setVisible(False)  
+        self.ui.esteno.setVisible(False) 
+        self.ui.estesi.setEnabled(False)
+        self.ui.esteno.setEnabled(False)     
+        self.ui.oestesi.setVisible(False)  
+        self.ui.oesteno.setVisible(False) 
+        self.ui.oestesi.setEnabled(False)
+        self.ui.oesteno.setEnabled(False) 
+        self.ui.descripcion.setText("El aventurero se adentró en la sala sur, donde hayó un gran \ncofre de madera en el centro de la sala, a si que asumió que no quedó otra alternativa más que abrirlo, para ello hay que tener suerte y que tras darle a un botón el numero que aparezca sea mayor que 63, ¿El aventurero logrará abrirlo?")
         self.ui.centro.setEnabled(False)
         self.ui.este.setEnabled(False)
         self.ui.oeste.setEnabled(False)
         cofre = random.randint(0, 100)
         if cofre>=63:
             self.ui.sur.setStyleSheet("background-color: rgb(100,255,100); font: 70 20pt Goudy Old Style")
-            self.ui.resultado.setText("El aventurero contempló el cofre, este empezó a abrirse y a deslumbrarlo con una cegadora luz, en su interior se hallaba una gran llave que le permitió volver a la sala inicial")
+            self.ui.resultado.setText("El aventurero contempló el cofre, este empezó a abrirse y a deslumbrarlo con una cegadora luz, en su interior se hallaba una gran llave")
             self.ui.sur.setEnabled(False)
             self.ui.este.setEnabled(True)
             self.ui.oeste.setEnabled(True)
