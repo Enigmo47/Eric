@@ -61,7 +61,6 @@ INDEX VERSION 1.131+C:\Users\alu\Desktop\Eric\Eric\ADE\Workspace\.metadata\.plug
 2853735071.index
 251541968.index
 825886301.index
-3746119816.index
 585342240.index
 4166992885.index
 2238488984.index

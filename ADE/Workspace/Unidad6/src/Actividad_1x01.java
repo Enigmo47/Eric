@@ -302,7 +302,6 @@ public class Actividad_1x01 {
 
 	}
 
-	
 	public static String texto() {
 		return "0. Salir del programa. \n" + "1. Insertar un departamento en la base de datos\n"
 				+ "2. Eliminar un departamento, por codigo, de la base de datos.\n"
