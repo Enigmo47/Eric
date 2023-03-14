@@ -10,15 +10,15 @@ public class Ejercicio2A {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
 		DatagramSocket clientSocket = new DatagramSocket(50000);// socket cliente
-		byte[] enviados = new byte[1024];
-		byte[] recibidos = new byte[1024];
+		byte[] enviados = new byte[8];
+		byte[] recibidos = new byte[8];
 
 		// Datos del servidor
 		InetAddress IPServidor = InetAddress.getLocalHost();// localhost
 		int puerto = 55002; // puerto por el que escucha
 
 		// Se solicitan los datos por teclado
-		System.out.print("Introduce 8 numeros: ");
+		System.out.print("Introduce 8 numeros: ");//("[0-9](8)")
 		String cadena = in.readLine();
 		enviados = cadena.getBytes();
 

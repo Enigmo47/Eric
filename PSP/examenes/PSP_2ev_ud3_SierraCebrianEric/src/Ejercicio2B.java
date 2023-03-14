@@ -8,14 +8,14 @@ public class Ejercicio2B {
 
 		// Puerto por el que escucha el servidor: 55000
 		DatagramSocket serverSocket = new DatagramSocket(55002);
-		byte[] recibidos = new byte[1024];
-		byte[] enviados = new byte[1024];
+		byte[] recibidos = new byte[8];
+		byte[] enviados = new byte[8];
 		String cadena;
 		String reverse;
 		while (true) {
 
 			// Ser recibe datagrama
-			recibidos = new byte[1024];
+			recibidos = new byte[8];
 			DatagramPacket paqRecibido = new DatagramPacket(recibidos, recibidos.length);
 			serverSocket.receive(paqRecibido);
 			cadena = new String(paqRecibido.getData());
