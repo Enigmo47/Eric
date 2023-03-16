@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) throws AddressException, MessagingException {
         String usuario = "testSMTPdamDual@outlook.com";
         String pass = "damdual2023";
-        String destino = "testSMTPdamDual@outlook.com";
+        String destino = "ismaC7@gmail.com";
         
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
@@ -30,7 +30,7 @@ public class Main {
         
         MimeMessage message = new MimeMessage(session);
         message.setFrom(new InternetAddress(usuario));
-        message.setSubject("Mensaje de Marta");
+        message.setSubject("Hola ismael");
         message.addRecipient(Message.RecipientType.TO, new InternetAddress(destino));
         message.setText("Prueba");
         
