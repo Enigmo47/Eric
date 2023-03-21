@@ -1,0 +1,298 @@
+import sys,os
+from PyQt6 import QtWidgets, QtGui
+from PyQt6.QtWidgets import (
+    QApplication, QDialog, QMainWindow, QMessageBox,
+)
+from PyQt6.QtGui import QAction
+import random
+#from PySide2.QtCore import QApplication, QTimer
+
+from MDE import Ui_Mazmorra_de_Eric
+
+basedir = os.path.dirname(__file__)
+class Window(QMainWindow):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.setupUi()
+    
+    def setupUi(self):
+        self.ui = Ui_Mazmorra_de_Eric()
+        self.ui.setupUi(self)
+        self.createMenu()
+        
+        
+        self.initializeUI()
+        self.show()
+        
+
+    def initializeUI(self):
+        self.setStyleSheet("background: rgb(190, 255, 201);"
+                        "font: 10pt \"Goudy Old Style\";")
+        self.contador = 0
+        self.ui.descripcion.setText("")
+        self.ui.norte.setEnabled(False)
+        self.ui.centro.setEnabled(False)
+        self.ui.sur.setEnabled(False)
+        self.ui.este.setEnabled(False)
+        self.ui.oeste.setEnabled(False)
+        self.ui.resultado.setText("")
+        self.ui.afirmativo.setVisible(False)  
+        self.ui.negativo.setVisible(False)
+        self.ui.estesi.setEnabled(False)
+        self.ui.estesi.setVisible(False)
+        self.ui.esteno.setEnabled(False)
+        self.ui.esteno.setVisible(False)
+        self.ui.oestesi.setEnabled(False)
+        self.ui.oestesi.setVisible(False)
+        self.ui.oesteno.setEnabled(False)
+        self.ui.oesteno.setVisible(False)
+        self.ui.norte.clicked.connect(self.salaNorte)
+        self.ui.sur.clicked.connect(self.salaSur)
+        self.ui.este.clicked.connect(self.salaEste)
+        self.ui.oeste.clicked.connect(self.salaOeste)
+        self.ui.centro.clicked.connect(self.salaCentro)
+        
+
+
+    def win(self):
+        if self.contador == 4:
+            self.ui.norte.setEnabled(False)
+            self.ui.sur.setEnabled(False)
+            self.ui.este.setEnabled(False)
+            self.ui.oeste.setEnabled(False)
+            self.ui.centro.setEnabled(True)
+
+    def ayuda(self):
+        self.popup= QMessageBox()
+        self.popup.setWindowTitle("Guia")
+        self.popup.setText("""Bienvenido a mi Mazmorra,para jugar 
+puedes seleccionar en la parte del menu arriba la opcion "Jugar",
+una vez haya sido dado este boton, se habilitaran las distintas 
+habitaciones. Puedes ir seleccionando una a una las distintas 
+habitaciones y para entrar tendras que darle al boton de abajo 
+"jugar", ademas podras salir de una habitacion con el boton "salir".
+
+Mucha suerte
+    """)
+        self.popup.exec()
+
+    def salaCentro(self):
+        self.popup= QMessageBox()
+        self.popup.setWindowTitle("fin")
+        self.popup.setText("""El aventurero, exhausto tras completar las cuatro pruebas y obtener las 4 llaves, pudo adentrarse en la sala central, que en realidad era la salida de ese infierno...
+    """)
+        self.popup.exec()
+
+
+    def gameover(self):
+        self.popup= QMessageBox()
+        self.popup.setWindowTitle("fin")
+        self.popup.setText("""El aventurero erró su misión y acabó lamentandose eternamente atrapado en la mazmorra
+    """)
+        self.popup.exec()
+
+
+
+    def limpiar(self):
+        self.ui.afirmativo.setText("")
+        self.ui.negativo.setText("")
+        self.ui.descripcion.setText("")
+        self.ui.afirmativo.setEnabled(False)
+        self.ui.negativo.setEnabled(False)
+        self.ui.afirmativo.setVisible(False)
+        self.ui.negativo.setVisible(False)
+        self.ui.estesi.setEnabled(False)
+        self.ui.estesi.setVisible(False)
+        self.ui.esteno.setEnabled(False)
+        self.ui.esteno.setVisible(False)
+        self.ui.oestesi.setEnabled(False)
+        self.ui.oestesi.setVisible(False)
+        self.ui.oesteno.setEnabled(False)
+        self.ui.oesteno.setVisible(False)
+
+    def ataque(self):
+        atk = random.randint(0, 100)
+        if (atk >= 60):
+            self.ui.resultado.setText("El aventurero acabó con el monstruo\n Consiguió la llave de la sala \n y volvió a la sala inicial a la espera de su siguiente reto...")
+            self.ui.norte.setEnabled(False)
+            self.ui.sur.setEnabled(True)
+            self.ui.este.setEnabled(True)
+            self.ui.oeste.setEnabled(True)
+            self.ui.afirmativo.setText("")
+            self.ui.negativo.setText("")
+            self.ui.afirmativo.setEnabled(False)
+            self.ui.negativo.setEnabled(False)
+            self.ui.afirmativo.setVisible(False)
+            self.ui.negativo.setVisible(False)
+            self.contador = self.contador + 1
+            self.win()
+        else:
+            self.ui.resultado.setText("El aventurero falló el ataque torpemente,\n al hacerlo este se resvaló y el monstruo acabó con él")
+            self.ui.norte.setStyleSheet("background-color: rgb(229, 30, 30)\n")
+            self.gameover()
+        self.limpiar()
+
+
+    def huir(self):
+        self.ui.resultado.setText("El aventurero, asustado ante tal peligro decidió\nvolver a la sala central para afrontar otro desafio antes de volver")
+        self.ui.norte.setEnabled(True)
+        self.ui.sur.setEnabled(True)
+        self.ui.este.setEnabled(True)
+        self.ui.oeste.setEnabled(True)
+        self.limpiar()
+
+    def verdadero(self):
+        self.ui.resultado.setText("El sabio quedó atónito ante la respuesta correcta del aventutrero y le permitio volver victorioso a la sala central\n Aunque no se fue sin antes conseguir la llave de la sala")
+        self.contador = self.contador + 1
+        self.win()
+        self.limpiar()
+        
+    def falso(self):
+        self.ui.resultado.setText("El sabio miró con enfado al aventurero y le lanzó un rayo que acabó con su vida")
+        self.gameover()
+        self.limpiar()
+
+    def salir(self):
+        sys.exit()
+
+
+    def salaNorte(self):
+        self.ui.estesi.setVisible(False)  
+        self.ui.esteno.setVisible(False) 
+        self.ui.estesi.setEnabled(False)
+        self.ui.esteno.setEnabled(False)     
+        self.ui.oestesi.setVisible(False)  
+        self.ui.oesteno.setVisible(False) 
+        self.ui.oestesi.setEnabled(False)
+        self.ui.oesteno.setEnabled(False) 
+        self.ui.afirmativo.setEnabled(True)
+        self.ui.negativo.setEnabled(True)
+        self.ui.afirmativo.setVisible(True)
+        self.ui.negativo.setVisible(True)
+        self.ui.descripcion.setText("El aventurero eligió la sala norte, donde apareció un monstruo que se avalanzó sobre el aventurero")
+        self.ui.norte.setStyleSheet("background-color: rgb(100,255,100); font: 70 20pt Goudy Old Style")
+        self.ui.centro.setEnabled(False)
+        self.ui.sur.setEnabled(False)
+        self.ui.este.setEnabled(False)
+        self.ui.oeste.setEnabled(False)
+        enemigo = random.randint(0, 100)
+        if (enemigo >= 90):
+            self.ui.descripcion.setText("El aventurero, ha muerto...")
+            self.ui.afirmativo.setText("")
+            self.ui.negativo.setText("")
+            self.ui.norte.setStyleSheet("background-color: rgb(229, 30, 30)\n")
+            self.limpiar()
+            self.gameover()
+            self.ui.afirmativo.setEnabled(False)
+            self.ui.negativo.setEnabled(False)
+            self.ui.afirmativo.setVisible(False)
+            self.ui.negativo.setVisible(False)
+                
+        else:
+            self.ui.descripcion.setText(" El aventurero sobrevivió, contraatacará? Y/N")
+            self.ui.afirmativo.setEnabled(True)
+            self.ui.negativo.setEnabled(True)
+            self.ui.afirmativo.setText("Y")
+            self.ui.negativo.setText("N")
+            self.ui.afirmativo.clicked.connect(self.ataque)
+            self.ui.negativo.clicked.connect(self.huir)
+
+    def play(self):
+        self.ui.centro.setEnabled(False)
+        self.ui.norte.setEnabled(True)
+        self.ui.sur.setEnabled(True)
+        self.ui.oeste.setEnabled(True)
+        self.ui.este.setEnabled(True) 
+
+        self.ui.afirmativo.setStyleSheet("background-color: rgb(255,255,255); font: 70 20pt Goudy Old Style")
+        self.ui.negativo.setStyleSheet("background-color: rgb(255,255,255); font: 70 20pt Goudy Old Style") 
+
+
+    def salaSur(self):
+        self.ui.estesi.setVisible(False)  
+        self.ui.esteno.setVisible(False) 
+        self.ui.estesi.setEnabled(False)
+        self.ui.esteno.setEnabled(False)     
+        self.ui.oestesi.setVisible(False)  
+        self.ui.oesteno.setVisible(False) 
+        self.ui.oestesi.setEnabled(False)
+        self.ui.oesteno.setEnabled(False) 
+        self.ui.descripcion.setText("El aventurero se adentró en la sala sur, donde hayó un gran \ncofre de madera en el centro de la sala, a si que asumió que no quedó otra alternativa más que abrirlo, para ello hay que tener suerte y que tras darle a un botón el numero que aparezca sea mayor que 63, ¿El aventurero logrará abrirlo?")
+        self.ui.centro.setEnabled(False)
+        self.ui.este.setEnabled(False)
+        self.ui.oeste.setEnabled(False)
+        cofre = random.randint(0, 100)
+        if cofre>=63:
+            self.ui.sur.setStyleSheet("background-color: rgb(100,255,100); font: 70 20pt Goudy Old Style")
+            self.ui.resultado.setText("El aventurero contempló el cofre, este empezó a abrirse y a deslumbrarlo con una cegadora luz, en su interior se hallaba una gran llave")
+            self.ui.sur.setEnabled(False)
+            self.ui.este.setEnabled(True)
+            self.ui.oeste.setEnabled(True)
+            self.contador = self.contador + 1
+            self.win()
+            
+        else:
+            self.ui.resultado.setText("No funcionó el número y el aventurero ha de volver a salir y entrar en la sala")
+
+    def salaEste(self):#botones estesi y esteno
+        self.ui.centro.setEnabled(False)
+        self.ui.oeste.setEnabled(False)
+        self.ui.estesi.setVisible(True)  
+        self.ui.esteno.setVisible(True) 
+        self.ui.estesi.setEnabled(True)
+        self.ui.esteno.setEnabled(True)
+        self.ui.oestesi.setVisible(False)  
+        self.ui.oesteno.setVisible(False) 
+        self.ui.oestesi.setEnabled(False)
+        self.ui.oesteno.setEnabled(False)        
+        self.ui.descripcion.setText("El aventurero se adentró en la sala este,\n donde se encontró con un sabio azul, este le hizo\n una pregunta....\nTengo un arco, no soy flecha y sí de madera.")
+        self.ui.resultado.setText("La respuesta es ballesta?")
+        self.ui.estesi.setText("Falso")
+        self.ui.esteno.setText("Verdadero")
+        self.ui.estesi.clicked.connect(self.verdadero)
+        self.ui.esteno.clicked.connect(self.falso)
+        self.ui.este.setEnabled(False)
+        self.ui.oeste.setEnabled(True)
+        self.ui.este.setStyleSheet("background-color: rgb(100,255,100); font: 70 20pt Goudy Old Style")
+
+
+    def salaOeste(self):#botones estesi y esteno
+        self.ui.estesi.setVisible(False)  
+        self.ui.esteno.setVisible(False) 
+        self.ui.estesi.setEnabled(False)
+        self.ui.esteno.setEnabled(False)            
+        self.ui.centro.setEnabled(False)
+        self.ui.oeste.setEnabled(False)
+        self.ui.oestesi.setVisible(True)  
+        self.ui.oesteno.setVisible(True)
+        self.ui.oestesi.setEnabled(True)
+        self.ui.oesteno.setEnabled(True) 
+        self.ui.descripcion.setText("El aventurero se adentró en la sala oeste,\n donde se encontró con un sabio rojo,\n este le hizo una pregunta....\n¿Cuál es el río más largo de España?")
+        self.ui.resultado.setText("La respuesta es el rio ebro?")
+        self.ui.oestesi.setText("Verdadero")
+        self.ui.oesteno.setText("falso")
+        self.ui.oestesi.clicked.connect(self.verdadero)
+        self.ui.oesteno.clicked.connect(self.falso)
+        self.ui.oeste.setEnabled(False)
+        self.ui.oeste.setStyleSheet("background-color: rgb(100,255,100); font: 70 20pt Goudy Old Style")
+    
+
+
+    def createMenu(self):
+        self.ui.actionJugar_2.triggered.connect(self.play)
+        self.ui.actionJugar_2.setShortcut("Ctrl+W")
+        self.ui.actionAyuda.triggered.connect(self.ayuda)
+        self.ui.actionSalir.triggered.connect(self.salir)
+        self.ui.actionSalir.setShortcut("Ctrl+Q")
+
+
+
+
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    app.setWindowIcon(QtGui.QIcon(os.path.join(basedir, 'MazmorraLogo.ico')))
+
+    win = Window()
+    win.show()
+    sys.exit(app.exec())
