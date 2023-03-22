@@ -22,7 +22,7 @@ public class Movimiento : MonoBehaviour
             float angle = Mathf.Atan2(Input.GetAxis("VerticalShoot"), Input.GetAxis("HorizontalShoot")) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
-            if (Time.time > nextFire)
+            if (Input.GetKeyDown(KeyCode.Space) && Time.time > nextFire)
             {
                 nextFire = Time.time + fireRate;
                 Shoot();
@@ -34,5 +34,10 @@ public class Movimiento : MonoBehaviour
     {
         GameObject disparo = Instantiate(disparoPrefab, transform.position, transform.rotation);
         Destroy(disparo, 2f);
+    }
+
+    private void Start()
+    {
+        disparoPrefab = GameObject.Find("dis");
     }
 }

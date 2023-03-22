@@ -8,7 +8,6 @@
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
-    <fullyQualifiedTypeName name="entrada.Teclado"/>
     <fullyQualifiedTypeName name="java.net.Socket"/>
     <fullyQualifiedTypeName name="ActividadChat.Actividad1x09Hilo"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
@@ -18,4 +17,5 @@
     <fullyQualifiedTypeName name="javax.mail.Session"/>
     <fullyQualifiedTypeName name="java.net.PasswordAuthentication"/>
     <fullyQualifiedTypeName name="javax.mail.PasswordAuthentication"/>
+    <fullyQualifiedTypeName name="entrada.Teclado"/>
 </qualifiedTypeNameHistroy>
