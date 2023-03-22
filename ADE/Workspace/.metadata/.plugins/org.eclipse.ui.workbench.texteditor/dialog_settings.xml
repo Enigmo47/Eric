@@ -6,7 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
+		<item key="selection" value="&#x09;&#x09;&#x09;&#x09;String titulo = Teclado.leerCadena(&quot;¿Título? &quot;);"/>
 		<list key="findhistory">
+			<item value="&#x09;&#x09;&#x09;&#x09;String titulo = Teclado.leerCadena(&quot;¿Título? &quot;);"/>
 		</list>
 		<list key="replacehistory">
 		</list>
