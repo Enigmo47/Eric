@@ -50,7 +50,7 @@ public class GestionBiblioteca {
 					agno = Teclado.leerEntero("¿Año? ");
 					genero = Teclado.leerCadena("¿Género? ");
 					lib = new Libro(codigo, titulo, autor, agno, genero);
-					AccesoBiblioteca.actializar(lib);
+					AccesoBiblioteca.actualizar(lib);
 					break;
 				case 5:
 					codigo = Teclado.leerEntero("¿Código? ");

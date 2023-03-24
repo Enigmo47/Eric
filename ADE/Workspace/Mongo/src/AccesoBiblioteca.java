@@ -69,36 +69,43 @@ public class AccesoBiblioteca {
 		cliente.close();
 	}
 
-	public static void actializar(Libro libro) {
-		MongoClient cliente = new MongoClient();
-		MongoDatabase bd = cliente.getDatabase("biblioteca");
-		MongoCollection<Document> libros = bd.getCollection("libros");
-		Bson filtro = eq("codigo", libro.getCodigo());
-
-		Bson modificaciones = combine(set("titulo", libro.getTitulo()), set("autor", libro.getAutor()),
-				set("agno", libro.getAgno()), set("genero", libro.getGenero()));
-		UpdateResult resultado = libros.updateOne(filtro, modificaciones);
-		long librosActualizados = resultado.getModifiedCount();
-		if (librosActualizados == 0) {
-			System.out.println("No se ha encontrado ningún libro con código " + libro.getCodigo() + ".");
-		} else {
-			System.out.println("Se ha actualizado " + librosActualizados + " libro.");
-		}
-		cliente.close();
+	public static void actualizar(Libro libro) {
+	    MongoClient cliente = new MongoClient();
+	    try {
+	        MongoDatabase bd = cliente.getDatabase("biblioteca");
+	        MongoCollection<Document> libros = bd.getCollection("libros");
+	        Bson filtro = eq("codigo", libro.getCodigo());
+	        Bson modificaciones = combine(
+	            set("titulo", libro.getTitulo()),
+	            set("autor", libro.getAutor()),
+	            set("agno", libro.getAgno()),
+	            set("genero", libro.getGenero())
+	        );
+	        UpdateResult resultado = libros.updateOne(filtro, modificaciones);
+	        long librosActualizados = resultado.getModifiedCount();
+	        if (librosActualizados == 0) {
+	            System.out.println("No se ha encontrado ningún libro con código " + libro.getCodigo() + ".");
+	        } else {
+	            System.out.println("Se ha actualizado " + librosActualizados + " libro.");
+	        }
+	    } finally {
+	        cliente.close();
+	    }
 	}
 
 	public static void borrar(int codigo) {
-		MongoClient cliente = new MongoClient();
-		MongoDatabase bd = cliente.getDatabase("biblioteca");
-		MongoCollection<Document> amigos = bd.getCollection("libros");
-		DeleteResult resultado = amigos.deleteOne(eq("codigo", codigo));
-		long librosEliminados = resultado.getDeletedCount();
-		if (librosEliminados == 0) {
-			System.out.println("No se ha encontrado ningún libro con código " + codigo + ".");
-		} else {
-			System.out.println("Se ha eliminado " + librosEliminados + " libro.");
-		}
-		cliente.close();
+	    MongoClient cliente = new MongoClient();
+	    MongoDatabase bd = cliente.getDatabase("biblioteca");
+	    MongoCollection<Document> libros = bd.getCollection("libros");
+	    DeleteResult resultado = libros.deleteOne(eq("codigo", codigo));
+	    long librosEliminados = resultado.getDeletedCount();
+	    if (librosEliminados == 0) {
+	        System.out.println("No se ha encontrado ningún libro con código " + codigo + ".");
+	    } else {
+	        System.out.println("Se ha eliminado " + librosEliminados + " libro.");
+	    }
+	    cliente.close();
 	}
+
 
 }
