@@ -22,12 +22,12 @@ public class EjercicioPosicion {
 					break;
 				case 1:
 					texto = Teclado.leerCadena("Inserte texto a cifrar");
-					resultado = CifradoCesar.cifrar(texto);
+					resultado = CifradoPosicion.cifrar(texto);
 					System.out.println(resultado);
 					break;
 				case 2:
 					texto = Teclado.leerCadena("Inserte texto a descifrar");
-					resultado = CifradoCesar.descifrar(texto);
+					resultado = CifradoPosicion.descifrar(texto);
 					System.out.println(resultado);
 					break;
 				default:
