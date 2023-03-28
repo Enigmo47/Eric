@@ -6,6 +6,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\enigm\Desktop\AD_2ev_mongo_SierraCebrianEric"/>
 			<item value="C:\Users\alu\Desktop\UD6 - Ejemplos MongoDB (Eclipse Java)"/>
 			<item value="C:\Users\alu\Desktop\Eric\Eric\ADE\Workspace\UD6 - Ejemplos eXistDB [Eclipse Java]"/>
 			<item value="C:\Users\alu\Desktop\Eric\Eric\ADE\Workspace\UD4"/>
