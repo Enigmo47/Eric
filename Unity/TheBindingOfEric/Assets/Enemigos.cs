@@ -72,16 +72,27 @@
          }
      }
      // Método para recibir daño
-     public void recibirDano(int cantidadDano)
-     {
-         vida -= cantidadDano;
-         if (vida <= 0)
-         {
-             // Si la vida llega a cero, destruir al enemigo
-             Destroy(gameObject);
-             estaVivo = false; // Establecer la variable estaVivo a false para evitar errores
-         }
-     }
+public void recibirDano(int cantidadDano)
+{
+    vida -= cantidadDano;
+    if (vida <= 0)
+    {
+        // Si la vida llega a cero, destruir al enemigo y llamar al método EnemigoDestruido de GinScreen
+        GameObject winScreenObject = GameObject.FindWithTag("win");
+        if (winScreenObject != null)
+        {
+            win winScreen = winScreenObject.GetComponent<win>();
+            if (winScreen != null)
+            {
+                winScreen.EnemigoDestruido();
+            }
+        }
+
+        Destroy(gameObject);
+        estaVivo = false; // Establecer la variable estaVivo a false para evitar errores
+    }
+}
+
  private void OnTriggerEnter2D(Collider2D collision)
  {
      if (collision.gameObject.CompareTag("Bullet") && estaVivo) // Comprobar si el enemigo está vivo antes de recibir daño

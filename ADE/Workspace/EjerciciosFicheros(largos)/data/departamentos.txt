@@ -1,2 +1,0 @@
-1;RRHH;Planta 1
-2;Informatica;Planta 2

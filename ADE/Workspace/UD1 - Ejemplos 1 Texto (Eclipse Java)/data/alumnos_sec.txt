@@ -1,6 +1,0 @@
-1;Isabel López;8.3298
-2;Pedro Gracia;5.7834
-3;Pilar Sánchez;6.1234
-4;Francisco Moreno;7.4532
-5;María Díaz;9.8765
-6;Jorge Martín;4.5432

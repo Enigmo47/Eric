@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;prueba.primos&apos; to &apos;Primos&apos;&#x0D;&#x0A;- Original project: &apos;prueba&apos;&#x0D;&#x0A;- Original element: &apos;prueba.primos&apos;&#x0D;&#x0A;- Renamed element: &apos;prueba.Primos&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;primos&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;prueba{primos.java[primos" matchStrategy="1" name="Primos" qualified="false" references="true" similarDeclarations="false" stamp="1666372087991" textual="false" version="1.0"/>
-</session>
